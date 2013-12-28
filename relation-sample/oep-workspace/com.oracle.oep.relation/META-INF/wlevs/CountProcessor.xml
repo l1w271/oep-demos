@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>CountProcessor</name>
+        <rules>        
+            <query id="CountQuery"> 
+            <![CDATA[ 
+            ISTREAM(
+            SELECT COUNT(*) as eventCount
+            FROM relationChannel as R   
+            )
+            ]]>
+            </query>
+        </rules>
+    </processor>
+</wlevs:config>
