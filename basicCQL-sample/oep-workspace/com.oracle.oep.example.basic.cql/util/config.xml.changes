@@ -1,0 +1,32 @@
+ # add the following elements under <http-pubsub> <channels> in your domain's config.xml file
+ # <INSTALL>\user_projects\domains\oep_domain\defaultserver\config
+    	<element>
+          <channel-pattern>/examples/allevents</channel-pattern>
+     	</element>
+    	<element>
+          <channel-pattern>/examples/filter</channel-pattern>
+     	</element>
+    	<element>
+          <channel-pattern>/examples/count</channel-pattern>
+     	</element>
+    	<element>
+          <channel-pattern>/examples/aggregate</channel-pattern>
+     	</element>
+    	<element>
+          <channel-pattern>/examples/partition</channel-pattern>
+     	</element>
+    	<element>
+          <channel-pattern>/examples/pattern</channel-pattern>
+     	</element>
+    	<element>
+          <channel-pattern>/examples/cacheevent</channel-pattern>
+     	</element>
+    	<element>
+          <channel-pattern>/examples/cachecheck</channel-pattern>
+     	</element>
+    	<element>
+          <channel-pattern>/examples/cacheoutput</channel-pattern>
+     	</element>
+     	<element>
+          <channel-pattern>/examples/cachestate</channel-pattern>
+     	</element>     

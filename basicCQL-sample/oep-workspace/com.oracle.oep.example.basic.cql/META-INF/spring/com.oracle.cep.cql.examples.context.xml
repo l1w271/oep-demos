@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_1_1_3.xsd">
+
+	
+	<wlevs:event-type-repository>
+		<wlevs:event-type type-name="SampleEvent">
+			<wlevs:class>com.oracle.cep.event.SampleEvent</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="CountEvent">
+			<wlevs:class>com.oracle.cep.event.CountEvent</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="AggregateEvent">
+			<wlevs:class>com.oracle.cep.event.AggregateEvent</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="PartitionEvent">
+			<wlevs:class>com.oracle.cep.event.PartitionEvent</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="PatternEvent">
+			<wlevs:class>com.oracle.cep.event.PatternEvent</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="SampleCacheEvent">
+			<wlevs:class>com.oracle.cep.event.SampleCacheEvent</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="CacheCheckEvent">
+			<wlevs:class>com.oracle.cep.event.CacheCheckEvent</wlevs:class>
+		</wlevs:event-type>		
+		<wlevs:event-type type-name="CacheOutputEvent">
+			<wlevs:class>com.oracle.cep.event.CacheOutputEvent</wlevs:class>
+		</wlevs:event-type>	
+		<wlevs:event-type type-name="CacheStateEvent">
+			<wlevs:class>com.oracle.cep.event.CacheStateEvent</wlevs:class>
+		</wlevs:event-type>				
+	</wlevs:event-type-repository>
+	
+	<!-- Caching Configuration -->
+
+	<!-- The value of the provider attribute is the only coherence-specific 
+	configuration in the Spring application context. -->
+	<wlevs:caching-system id="ExampleCachingSystem" provider="coherence" advertise="true"/>
+	
+	<wlevs:cache id="ExampleCache" caching-system="ExampleCachingSystem"
+		value-type="SampleCacheEvent" key-properties="eventKey">
+		<wlevs:cache-listener ref="CacheListener" />
+	</wlevs:cache>
+	
+	<!-- End of Caching Configuration -->
+	
+
+	<wlevs:adapter id="SampleCSVAdapter" provider="csvgen">
+		<wlevs:listener ref="inputChannel" />
+		<wlevs:instance-property name="port" value="9060" />
+		<wlevs:instance-property name="eventTypeName" value="SampleEvent" />
+		<wlevs:instance-property name="eventPropertyNames" value="eventID,eventType,eventKey,eventValue,state" />
+	</wlevs:adapter>
+
+	<wlevs:adapter id="CacheCheckCSVAdapter" provider="csvgen">
+		<wlevs:listener ref="cacheCheckChannel" />
+		<wlevs:instance-property name="port" value="9061" />
+		<wlevs:instance-property name="eventTypeName" value="CacheCheckEvent" />
+		<wlevs:instance-property name="eventPropertyNames" value="eventKey,check" />
+	</wlevs:adapter>
+
+
+	<wlevs:channel id="inputChannel" event-type="SampleEvent">
+		<wlevs:listener ref="FilterProcessor" />
+		<wlevs:listener ref="CountProcessor" />
+		<wlevs:listener ref="AggregateProcessor" />
+		<wlevs:listener ref="PartitionProcessor" />
+		<wlevs:listener ref="PatternProcessor" />
+		<wlevs:listener ref="CacheProcessor" />
+		<wlevs:listener ref="AllEventsProcessor" />
+	</wlevs:channel>
+	
+	<wlevs:processor id="AllEventsProcessor">
+		<wlevs:listener ref="allEventsChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="allEventsChannel" event-type="SampleEvent">
+		<wlevs:listener ref="AllEventsPubSubAdapter" />
+	</wlevs:channel>
+	
+	<wlevs:adapter id="AllEventsPubSubAdapter" provider="httppub" />
+	
+	<wlevs:processor id="FilterProcessor">
+		<wlevs:listener ref="filterChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="filterChannel" event-type="SampleEvent">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.filterChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="FilterPubSubAdapter" />
+	</wlevs:channel>
+
+	<wlevs:adapter id="FilterPubSubAdapter" provider="httppub" />
+
+	<wlevs:processor id="CountProcessor">
+		<wlevs:listener ref="countChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="countChannel" event-type="CountEvent">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.countChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="CountPubSubAdapter" />
+	</wlevs:channel>
+
+	<wlevs:adapter id="CountPubSubAdapter" provider="httppub" />
+
+	<wlevs:processor id="AggregateProcessor">
+		<wlevs:listener ref="aggregateChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="aggregateChannel" event-type="AggregateEvent">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.aggregateChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="AggregatePubSubAdapter" />
+	</wlevs:channel>
+	
+   <wlevs:adapter id="AggregatePubSubAdapter" provider="httppub" />
+	
+	<wlevs:processor id="PartitionProcessor">
+		<wlevs:listener ref="partitionChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="partitionChannel" event-type="PartitionEvent">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.partitionChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="PartitionPubSubAdapter" />
+	</wlevs:channel>
+	
+	<wlevs:adapter id="PartitionPubSubAdapter" provider="httppub" />
+	
+	<wlevs:processor id="PatternProcessor">
+		<wlevs:listener ref="patternChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="patternChannel" event-type="PatternEvent">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.patternChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="PatternPubSubAdapter" />
+	</wlevs:channel>
+	
+	<wlevs:adapter id="PatternPubSubAdapter" provider="httppub" />
+	
+	<wlevs:processor id="CacheProcessor">
+		<wlevs:listener ref="cacheChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="cacheChannel" event-type="SampleCacheEvent">
+		<wlevs:listener ref="ExampleCache" />
+		<wlevs:listener ref="CacheEventPubSubAdapter" />
+	</wlevs:channel>
+
+	<bean id="CacheListener" class="com.oracle.cep.listener.CacheListener"/>
+	
+	<wlevs:adapter id="CacheEventPubSubAdapter" provider="httppub" />
+
+	<wlevs:channel id="cacheCheckChannel" event-type="CacheCheckEvent">
+		<wlevs:listener ref="CacheCheckProcessor" />
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.cacheCheckChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="CacheCheckPubSubAdapter" />
+	</wlevs:channel>
+	
+		<wlevs:adapter id="CacheCheckPubSubAdapter" provider="httppub" />
+
+	<wlevs:processor id="CacheCheckProcessor">
+		<wlevs:listener ref="cacheOutputChannel" />
+		<wlevs:listener ref="cacheStateChannel" />
+		<wlevs:cache-source ref="ExampleCache" />
+	</wlevs:processor>
+	<wlevs:channel id="cacheOutputChannel" event-type="CacheOutputEvent">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.cacheOutputChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="CacheOutputPubSubAdapter" />
+	</wlevs:channel>
+	
+	<wlevs:adapter id="CacheOutputPubSubAdapter" provider="httppub" />
+
+
+	<wlevs:channel id="cacheStateChannel" event-type="CacheStateEvent">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.cacheStateChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="CacheStatePubSubAdapter" />
+	</wlevs:channel>
+	
+	<wlevs:adapter id="CacheStatePubSubAdapter" provider="httppub" />
+
+    <wlevs:event-bean id="WebContentRegistration" class="com.oracle.cep.adapter.WebContentRegistration">
+    	<wlevs:instance-property name="serverPath" value="/examples"/>
+    	<wlevs:instance-property name="resourcePath" value="/webResources"/>
+    </wlevs:event-bean>
+
+</beans>
+
+<!-- 
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Examples.cacheChannel" />
+			</bean>
+		</wlevs:listener>
+		 -->

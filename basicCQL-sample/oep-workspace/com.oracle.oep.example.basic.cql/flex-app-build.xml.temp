@@ -1,0 +1,12 @@
+<project name="flex-app-build" basedir="." default="updateWebResources">
+	
+	<target name="updateWebResources">
+		<delete includeemptydirs="true">
+			<fileset dir="${basedir}/src-flex-bin-release" includes="**/*"></fileset>
+		</delete>
+		<copy todir="${basedir}/src-flex-bin-release/webResources">
+		    <fileset dir="${basedir}/../bin-release"/>
+		</copy>
+	</target>
+
+</project>

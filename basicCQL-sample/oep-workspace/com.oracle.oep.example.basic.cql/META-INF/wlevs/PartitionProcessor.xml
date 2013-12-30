@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>PartitionProcessor</name>
+        <rules>
+            <query id="PartitionQuery"> 
+            <![CDATA[ 
+            ISTREAM(
+            SELECT AVG(eventIntValue) as eventAvg, SUM(eventIntValue) as eventSum, COUNT(*) as numEvents, eventKey
+            FROM inputChannel [PARTITION BY eventKey ROWS 2]
+            GROUP BY eventKey           
+            ) 
+            ]]> 
+            </query>
+        </rules>
+    </processor>
+</wlevs:config>
+
+
+

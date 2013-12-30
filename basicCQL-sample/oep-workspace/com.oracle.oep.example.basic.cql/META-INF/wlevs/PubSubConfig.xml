@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+
+    <http-pub-sub-adapter>
+        <name>AllEventsPubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/allevents</channel>
+        <event-type>SampleEvent</event-type>
+    </http-pub-sub-adapter>
+
+    <http-pub-sub-adapter>
+        <name>FilterPubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/filter</channel>
+        <event-type>SampleEvent</event-type>
+    </http-pub-sub-adapter>
+
+    <http-pub-sub-adapter>
+        <name>CountPubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/count</channel>
+        <event-type>CountEvent</event-type>
+    </http-pub-sub-adapter>
+
+    <http-pub-sub-adapter>
+        <name>AggregatePubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/aggregate</channel>
+        <event-type>AggregateEvent</event-type>
+    </http-pub-sub-adapter>
+
+    <http-pub-sub-adapter>
+        <name>PartitionPubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/partition</channel>
+        <event-type>PartitionEvent</event-type>
+    </http-pub-sub-adapter>
+
+    <http-pub-sub-adapter>
+        <name>PatternPubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/pattern</channel>
+        <event-type>PatternEvent</event-type>
+    </http-pub-sub-adapter>
+
+    <http-pub-sub-adapter>
+        <name>CacheEventPubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/cacheevent</channel>
+        <event-type>SampleCacheEvent</event-type>
+    </http-pub-sub-adapter>
+
+    <http-pub-sub-adapter>
+        <name>CacheCheckPubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/cachecheck</channel>
+        <event-type>CacheCheckEvent</event-type>
+    </http-pub-sub-adapter>
+
+    <http-pub-sub-adapter>
+        <name>CacheOutputPubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/cacheoutput</channel>
+        <event-type>CacheOutputEvent</event-type>
+    </http-pub-sub-adapter>
+    
+     <http-pub-sub-adapter>
+        <name>CacheStatePubSubAdapter</name>
+        <server-url>http://localhost:9002/pubsub</server-url>
+        <channel>/examples/cachestate</channel>
+        <event-type>CacheStateEvent</event-type>
+    </http-pub-sub-adapter>
+
+</wlevs:config>
+

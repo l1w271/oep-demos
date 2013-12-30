@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>FilterProcessor</name>
+        <rules>
+            <query id="FilterQuery"> 
+            <![CDATA[ 
+            ISTREAM(
+            SELECT *
+            FROM inputChannel [NOW]
+            WHERE eventIntValue > 10         
+            ) 
+            ]]> 
+            </query>
+        </rules>
+    </processor>
+</wlevs:config>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>CacheCheckProcessor</name>
+        <rules>
+            <query id="CacheOutputQuery"> 
+            <![CDATA[ 
+            ISTREAM(
+            SELECT excache.eventID, 
+            	   excache.eventType, 
+            	   excache.eventKey,
+            	   excache.eventValue, 
+            	   excache.state
+            FROM ExampleCache as excache, 
+            	 cacheCheckChannel [now] as check           
+            WHERE excache.eventKey = check.eventKey             
+            ) 
+            ]]> 
+            </query>
+            <query id="StateOutputQuery"> 
+            <![CDATA[ 
+            ISTREAM(
+            SELECT C.eventKey, 
+            	   C.state,
+            	   A.check,
+            	   CASE 
+                      WHEN C.state = "on" and A.check = "on"  THEN "TRUE"
+                      WHEN C.state = "on" and A.check = "off"  THEN "FALSE"
+                      WHEN C.state = "off" and A.check = "off"  THEN "TRUE"
+                      WHEN C.state = "off" and A.check = "on"  THEN "FALSE"
+                   END AS response    
+            FROM ExampleCache as C, 
+            	 cacheCheckChannel [now] as A           
+            WHERE A.eventKey = C.eventKey             
+            ) 
+            ]]> 
+            </query>
+            
+        </rules>
+    </processor>
+    
+    
+    <channel>
+	    <name>cacheOutputChannel</name>
+	   <selector>CacheOutputQuery</selector>
+    </channel>
+    
+ 	<channel>
+	    <name>cacheStateChannel</name>
+	   <selector>StateOutputQuery</selector>
+    </channel>    
+    
+    
+</wlevs:config>
+
