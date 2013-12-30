@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    
+     <channel>
+	    <name>inputChannel</name>
+	    <max-size>1000</max-size>
+	    <max-threads>1</max-threads>
+    </channel>
+    
+   <channel>
+	    <name>vehicleChannel</name>
+	    <max-size>1000</max-size>
+	    <max-threads>1</max-threads>
+	    <heartbeat>60000</heartbeat>
+    </channel>
+    
+</wlevs:config>
+

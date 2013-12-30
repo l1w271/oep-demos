@@ -1,0 +1,795 @@
+Settings:
+test.propFile=vehicles.prop
+test.mode=client
+test.host=
+test.port=9050
+test.verbose=false
+test.statInterval=2000
+test.latencyStats=false
+test.rate=1
+test.startRate=1
+test.rampUpSecs=0
+test.timeSyncPort=0
+test.senders=1
+test.reportUnchangedQuotes=true
+test.filePerSender=false
+test.secs=600
+test.packetType=CSV
+test.stocksFile=
+test.stocksFileLength=0
+test.csvDataFile=vehicles.csv
+test.ticksPerPacket=20
+test.loopBack=true
+test.senderSkew=0
+
+
+INFO: 1 senders
+INFO:  PacketSender (name=Send0 host= port=9050) connected and ready to start.   Ticks/Second = 2000.   Micros per tick = 500.
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:29.166
+  CurrentTimeMillis = 1388442449166
+  DeltaTime = 2998.397 ms
+  Count = 3
+  Count/Sec = 1.0005346189980846
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:32.165
+  CurrentTimeMillis = 1388442452165
+  DeltaTime = 2999.818 ms
+  Count = 3
+  Count/Sec = 1.0000606703473345
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:35.165
+  CurrentTimeMillis = 1388442455165
+  DeltaTime = 3000.34 ms
+  Count = 3
+  Count/Sec = 0.9998866795096556
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:38.166
+  CurrentTimeMillis = 1388442458166
+  DeltaTime = 3000.418 ms
+  Count = 3
+  Count/Sec = 0.9998606860777398
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:41.165
+  CurrentTimeMillis = 1388442461165
+  DeltaTime = 2999.277 ms
+  Count = 3
+  Count/Sec = 1.0002410580950007
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:44.165
+  CurrentTimeMillis = 1388442464165
+  DeltaTime = 3000.013 ms
+  Count = 3
+  Count/Sec = 0.9999956666854443
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:47.166
+  CurrentTimeMillis = 1388442467166
+  DeltaTime = 3000.891 ms
+  Count = 3
+  Count/Sec = 0.9997030881828098
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:50.165
+  CurrentTimeMillis = 1388442470165
+  DeltaTime = 2999.288 ms
+  Count = 3
+  Count/Sec = 1.000237389673816
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:53.165
+  CurrentTimeMillis = 1388442473165
+  DeltaTime = 2999.556 ms
+  Count = 3
+  Count/Sec = 1.0001480219072423
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:56.166
+  CurrentTimeMillis = 1388442476166
+  DeltaTime = 3000.882 ms
+  Count = 3
+  Count/Sec = 0.9997060864105953
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:27:59.165
+  CurrentTimeMillis = 1388442479165
+  DeltaTime = 2999.134 ms
+  Count = 3
+  Count/Sec = 1.0002887500191722
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:02.165
+  CurrentTimeMillis = 1388442482165
+  DeltaTime = 3000.252 ms
+  Count = 3
+  Count/Sec = 0.9999160070554074
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:05.166
+  CurrentTimeMillis = 1388442485166
+  DeltaTime = 3000.631 ms
+  Count = 3
+  Count/Sec = 0.9997897108974745
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:08.166
+  CurrentTimeMillis = 1388442488166
+  DeltaTime = 3000.037 ms
+  Count = 3
+  Count/Sec = 0.999987666818776
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:11.165
+  CurrentTimeMillis = 1388442491165
+  DeltaTime = 2999.311 ms
+  Count = 3
+  Count/Sec = 1.0002297194255614
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:14.165
+  CurrentTimeMillis = 1388442494165
+  DeltaTime = 2999.795 ms
+  Count = 3
+  Count/Sec = 1.000068338003097
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:17.165
+  CurrentTimeMillis = 1388442497165
+  DeltaTime = 3000.119 ms
+  Count = 3
+  Count/Sec = 0.9999603349067154
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:20.165
+  CurrentTimeMillis = 1388442500165
+  DeltaTime = 3000.695 ms
+  Count = 3
+  Count/Sec = 0.9997683869903472
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:23.165
+  CurrentTimeMillis = 1388442503165
+  DeltaTime = 2999.32 ms
+  Count = 3
+  Count/Sec = 1.0002267180560926
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:26.166
+  CurrentTimeMillis = 1388442506166
+  DeltaTime = 3000.717 ms
+  Count = 3
+  Count/Sec = 0.9997610571073513
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:29.165
+  CurrentTimeMillis = 1388442509165
+  DeltaTime = 2999.924 ms
+  Count = 3
+  Count/Sec = 1.0000253339751275
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:32.165
+  CurrentTimeMillis = 1388442512165
+  DeltaTime = 2999.542 ms
+  Count = 3
+  Count/Sec = 1.0001526899773365
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:35.165
+  CurrentTimeMillis = 1388442515165
+  DeltaTime = 2999.696 ms
+  Count = 3
+  Count/Sec = 1.0001013436028185
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:38.165
+  CurrentTimeMillis = 1388442518165
+  DeltaTime = 3000.562 ms
+  Count = 3
+  Count/Sec = 0.9998127017538714
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:41.165
+  CurrentTimeMillis = 1388442521165
+  DeltaTime = 2999.87 ms
+  Count = 3
+  Count/Sec = 1.0000433352111926
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:44.165
+  CurrentTimeMillis = 1388442524165
+  DeltaTime = 3000.174 ms
+  Count = 3
+  Count/Sec = 0.9999420033638048
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:47.165
+  CurrentTimeMillis = 1388442527165
+  DeltaTime = 2999.572 ms
+  Count = 3
+  Count/Sec = 1.0001426870233485
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:50.165
+  CurrentTimeMillis = 1388442530165
+  DeltaTime = 3000.529 ms
+  Count = 3
+  Count/Sec = 0.9998236977546293
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:53.165
+  CurrentTimeMillis = 1388442533165
+  DeltaTime = 2999.383 ms
+  Count = 3
+  Count/Sec = 1.0002057089741456
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:56.166
+  CurrentTimeMillis = 1388442536166
+  DeltaTime = 3000.932 ms
+  Count = 3
+  Count/Sec = 0.9996894298171368
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:28:59.165
+  CurrentTimeMillis = 1388442539165
+  DeltaTime = 2999.628 ms
+  Count = 3
+  Count/Sec = 1.0001240153779067
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:02.165
+  CurrentTimeMillis = 1388442542165
+  DeltaTime = 2999.474 ms
+  Count = 3
+  Count/Sec = 1.0001753640805022
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:05.166
+  CurrentTimeMillis = 1388442545166
+  DeltaTime = 3001.028 ms
+  Count = 3
+  Count/Sec = 0.9996574507135554
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:08.166
+  CurrentTimeMillis = 1388442548166
+  DeltaTime = 2999.939 ms
+  Count = 3
+  Count/Sec = 1.0000203337467861
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:11.165
+  CurrentTimeMillis = 1388442551165
+  DeltaTime = 2999.632 ms
+  Count = 3
+  Count/Sec = 1.000122681715624
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:14.165
+  CurrentTimeMillis = 1388442554165
+  DeltaTime = 2999.977 ms
+  Count = 3
+  Count/Sec = 1.000007666725445
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:17.165
+  CurrentTimeMillis = 1388442557165
+  DeltaTime = 3000.092 ms
+  Count = 3
+  Count/Sec = 0.9999693342737489
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:20.165
+  CurrentTimeMillis = 1388442560165
+  DeltaTime = 2999.678 ms
+  Count = 3
+  Count/Sec = 1.0001073448550144
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:23.165
+  CurrentTimeMillis = 1388442563165
+  DeltaTime = 3000.349 ms
+  Count = 3
+  Count/Sec = 0.9998836801985369
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:26.165
+  CurrentTimeMillis = 1388442566165
+  DeltaTime = 2999.584 ms
+  Count = 3
+  Count/Sec = 1.0001386858977779
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:29.165
+  CurrentTimeMillis = 1388442569165
+  DeltaTime = 2999.991 ms
+  Count = 3
+  Count/Sec = 1.000003000009
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:32.165
+  CurrentTimeMillis = 1388442572165
+  DeltaTime = 2999.685 ms
+  Count = 3
+  Count/Sec = 1.0001050110261578
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:35.165
+  CurrentTimeMillis = 1388442575165
+  DeltaTime = 3000.098 ms
+  Count = 3
+  Count/Sec = 0.9999673344004096
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:38.165
+  CurrentTimeMillis = 1388442578165
+  DeltaTime = 3000.612 ms
+  Count = 3
+  Count/Sec = 0.9997960416075121
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:41.165
+  CurrentTimeMillis = 1388442581165
+  DeltaTime = 2999.797 ms
+  Count = 3
+  Count/Sec = 1.0000676712457544
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:44.165
+  CurrentTimeMillis = 1388442584165
+  DeltaTime = 2999.588 ms
+  Count = 3
+  Count/Sec = 1.0001373521963681
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:47.165
+  CurrentTimeMillis = 1388442587165
+  DeltaTime = 3000.035 ms
+  Count = 3
+  Count/Sec = 0.9999883334694428
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:50.166
+  CurrentTimeMillis = 1388442590166
+  DeltaTime = 3000.656 ms
+  Count = 3
+  Count/Sec = 0.9997813811379912
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:53.165
+  CurrentTimeMillis = 1388442593165
+  DeltaTime = 2999.828 ms
+  Count = 3
+  Count/Sec = 1.000057336620633
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:56.165
+  CurrentTimeMillis = 1388442596165
+  DeltaTime = 3000.034 ms
+  Count = 3
+  Count/Sec = 0.9999886667951097
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:29:59.165
+  CurrentTimeMillis = 1388442599165
+  DeltaTime = 2999.433 ms
+  Count = 3
+  Count/Sec = 1.0001890357277525
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:02.165
+  CurrentTimeMillis = 1388442602165
+  DeltaTime = 3000.264 ms
+  Count = 3
+  Count/Sec = 0.9999120077433185
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:05.165
+  CurrentTimeMillis = 1388442605165
+  DeltaTime = 3000.284 ms
+  Count = 3
+  Count/Sec = 0.9999053422942628
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:08.165
+  CurrentTimeMillis = 1388442608165
+  DeltaTime = 2999.558 ms
+  Count = 3
+  Count/Sec = 1.000147355043643
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:11.166
+  CurrentTimeMillis = 1388442611166
+  DeltaTime = 3000.686 ms
+  Count = 3
+  Count/Sec = 0.9997713856098238
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:14.165
+  CurrentTimeMillis = 1388442614165
+  DeltaTime = 2999.307 ms
+  Count = 3
+  Count/Sec = 1.0002310533733292
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:17.165
+  CurrentTimeMillis = 1388442617165
+  DeltaTime = 3000.016 ms
+  Count = 3
+  Count/Sec = 0.9999946666951111
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:20.165
+  CurrentTimeMillis = 1388442620165
+  DeltaTime = 3000.367 ms
+  Count = 3
+  Count/Sec = 0.9998776816302806
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:23.165
+  CurrentTimeMillis = 1388442623165
+  DeltaTime = 3000.129 ms
+  Count = 3
+  Count/Sec = 0.9999570018489206
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:26.165
+  CurrentTimeMillis = 1388442626165
+  DeltaTime = 2999.133 ms
+  Count = 3
+  Count/Sec = 1.0002890835451446
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:29.165
+  CurrentTimeMillis = 1388442629165
+  DeltaTime = 3000.279 ms
+  Count = 3
+  Count/Sec = 0.9999070086481956
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:32.165
+  CurrentTimeMillis = 1388442632165
+  DeltaTime = 3000.112 ms
+  Count = 3
+  Count/Sec = 0.9999626680603924
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:35.165
+  CurrentTimeMillis = 1388442635165
+  DeltaTime = 2999.873 ms
+  Count = 3
+  Count/Sec = 1.0000423351255203
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:38.165
+  CurrentTimeMillis = 1388442638165
+  DeltaTime = 3000.07 ms
+  Count = 3
+  Count/Sec = 0.9999766672110985
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:41.165
+  CurrentTimeMillis = 1388442641165
+  DeltaTime = 3000.301 ms
+  Count = 3
+  Count/Sec = 0.9998996767324346
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:44.165
+  CurrentTimeMillis = 1388442644165
+  DeltaTime = 2999.642 ms
+  Count = 3
+  Count/Sec = 1.0001193475754775
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:47.165
+  CurrentTimeMillis = 1388442647165
+  DeltaTime = 3000.63 ms
+  Count = 3
+  Count/Sec = 0.9997900440907409
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:50.165
+  CurrentTimeMillis = 1388442650165
+  DeltaTime = 2999.762 ms
+  Count = 3
+  Count/Sec = 1.0000793396276104
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:53.166
+  CurrentTimeMillis = 1388442653166
+  DeltaTime = 3000.298 ms
+  Count = 3
+  Count/Sec = 0.9999006765327978
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:56.165
+  CurrentTimeMillis = 1388442656165
+  DeltaTime = 2999.937 ms
+  Count = 3
+  Count/Sec = 1.0000210004410093
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:30:59.165
+  CurrentTimeMillis = 1388442659165
+  DeltaTime = 2999.337 ms
+  Count = 3
+  Count/Sec = 1.0002210488517962
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:02.165
+  CurrentTimeMillis = 1388442662165
+  DeltaTime = 3000.582 ms
+  Count = 3
+  Count/Sec = 0.9998060376287
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:05.166
+  CurrentTimeMillis = 1388442665166
+  DeltaTime = 3000.147 ms
+  Count = 3
+  Count/Sec = 0.9999510024008824
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:08.165
+  CurrentTimeMillis = 1388442668165
+  DeltaTime = 2999.75 ms
+  Count = 3
+  Count/Sec = 1.0000833402783564
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:11.165
+  CurrentTimeMillis = 1388442671165
+  DeltaTime = 2999.957 ms
+  Count = 3
+  Count/Sec = 1.0000143335387808
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:14.165
+  CurrentTimeMillis = 1388442674165
+  DeltaTime = 3000.128 ms
+  Count = 3
+  Count/Sec = 0.9999573351537
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:17.166
+  CurrentTimeMillis = 1388442677166
+  DeltaTime = 3000.207 ms
+  Count = 3
+  Count/Sec = 0.9999310047606715
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:20.165
+  CurrentTimeMillis = 1388442680165
+  DeltaTime = 2999.629 ms
+  Count = 3
+  Count/Sec = 1.0001236819620025
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:23.165
+  CurrentTimeMillis = 1388442683165
+  DeltaTime = 2999.603 ms
+  Count = 3
+  Count/Sec = 1.0001323508477622
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:26.166
+  CurrentTimeMillis = 1388442686166
+  DeltaTime = 3000.892 ms
+  Count = 3
+  Count/Sec = 0.9997027550474992
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:29.165
+  CurrentTimeMillis = 1388442689165
+  DeltaTime = 2998.917 ms
+  Count = 3
+  Count/Sec = 1.0003611303680628
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:32.165
+  CurrentTimeMillis = 1388442692165
+  DeltaTime = 3000.071 ms
+  Count = 3
+  Count/Sec = 0.9999763338934313
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:35.165
+  CurrentTimeMillis = 1388442695165
+  DeltaTime = 3000.054 ms
+  Count = 3
+  Count/Sec = 0.9999820003239941
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:38.165
+  CurrentTimeMillis = 1388442698165
+  DeltaTime = 3000.622 ms
+  Count = 3
+  Count/Sec = 0.999792709644867
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:41.165
+  CurrentTimeMillis = 1388442701165
+  DeltaTime = 3000.041 ms
+  Count = 3
+  Count/Sec = 0.9999863335201086
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:44.165
+  CurrentTimeMillis = 1388442704165
+  DeltaTime = 2999.379 ms
+  Count = 3
+  Count/Sec = 1.0002070428578715
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:47.166
+  CurrentTimeMillis = 1388442707166
+  DeltaTime = 3000.655 ms
+  Count = 3
+  Count/Sec = 0.9997817143257056
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:50.165
+  CurrentTimeMillis = 1388442710165
+  DeltaTime = 2999.78 ms
+  Count = 3
+  Count/Sec = 1.0000733387115055
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:53.165
+  CurrentTimeMillis = 1388442713165
+  DeltaTime = 3000.014 ms
+  Count = 3
+  Count/Sec = 0.999995333355111
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:56.165
+  CurrentTimeMillis = 1388442716165
+  DeltaTime = 2999.412 ms
+  Count = 3
+  Count/Sec = 1.0001960384235309
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:31:59.166
+  CurrentTimeMillis = 1388442719166
+  DeltaTime = 3001.061 ms
+  Count = 3
+  Count/Sec = 0.9996464583692235
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:32:02.165
+  CurrentTimeMillis = 1388442722165
+  DeltaTime = 2999.35 ms
+  Count = 3
+  Count/Sec = 1.0002167136212845
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:32:05.165
+  CurrentTimeMillis = 1388442725165
+  DeltaTime = 2999.799 ms
+  Count = 3
+  Count/Sec = 1.0000670044893007
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:32:08.165
+  CurrentTimeMillis = 1388442728165
+  DeltaTime = 3000.408 ms
+  Count = 3
+  Count/Sec = 0.9998640184934849
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:32:11.165
+  CurrentTimeMillis = 1388442731165
+  DeltaTime = 2999.906 ms
+  Count = 3
+  Count/Sec = 1.000031334315142
+
+PerfStats
+  Name = com.bea.wlevs.adapter.packet.impl.marketsim.CSVFileDataStream
+  CurrentTime = 2013-12-30 14:32:13.169
+  CurrentTimeMillis = 1388442733169
+  DeltaTime = 2002.253 ms
+  Count = 3
+  Count/Sec = 1.4983121513614914
+

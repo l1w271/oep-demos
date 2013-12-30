@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>OutputProcessor</name>
+        <rules>
+       
+           <view id="View1"> 
+            <![CDATA[ 
+            ISTREAM(
+            SELECT MAX(eventTime) as eventTime, vehicleAssetName
+            FROM vehicleChannel [RANGE 60 SECONDS SLIDE 60 SECONDS]
+            GROUP BY vehicleAssetName
+            )
+            ]]>
+            </view>                  
+           	           	 
+           	<query id="Query1"> 
+            <![CDATA[ 
+            ISTREAM(
+            SELECT B.vehicleID, B.vehicleAssetName, B.eventTime 
+            FROM View1 [NOW] AS A, vehicleChannel [RANGE 60 SECONDS] AS B
+            WHERE A.vehicleAssetName = B.vehicleAssetName
+            AND A.eventTime = B.eventTime
+            )
+            ]]>
+            </query> 
+
+        </rules>
+    </processor>
+</wlevs:config>
+

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_1_1_3.xsd">
+
+	<wlevs:event-type-repository>
+		<wlevs:event-type type-name="Vehicle">
+			<wlevs:class>com.oracle.cep.events.Vehicle</wlevs:class>
+		</wlevs:event-type>	
+	</wlevs:event-type-repository>
+
+
+	<wlevs:adapter id="VehicleAdapter" provider="csvgen">
+		<wlevs:instance-property name="port" value="9050" />
+		<wlevs:instance-property name="eventTypeName" value="Vehicle" />
+		<wlevs:instance-property name="eventPropertyNames" value="vehicleID,vehicleAssetName" />
+		<wlevs:listener ref="inputChannel" />		
+	</wlevs:adapter>
+
+
+	<wlevs:channel id="inputChannel" event-type="Vehicle">
+		<wlevs:listener ref="AssetProcessor" />
+		
+	</wlevs:channel>
+
+
+	<wlevs:processor id="AssetProcessor">
+		<wlevs:listener ref="vehicleChannel" />
+	</wlevs:processor>
+	
+	
+	<wlevs:channel id="outputChannel" event-type="Vehicle">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="**** outputChannel **** " />
+			</bean>
+		</wlevs:listener>
+	
+	</wlevs:channel>
+	
+	<wlevs:channel id="vehicleChannel" event-type="Vehicle" advertise="true" is-relation="false">
+		<wlevs:listener ref="OutputProcessor" />
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="inputChannel" />
+			</bean>
+		</wlevs:listener>	
+	</wlevs:channel>
+	<wlevs:processor id="OutputProcessor">
+		<wlevs:listener ref="outputChannel" />
+	</wlevs:processor>
+	
+</beans>
+

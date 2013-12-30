@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>AssetProcessor</name>
+        <rules>
+            <query id="Q1"><![CDATA[
+    		ISTREAM(
+	            SELECT 
+	            	R.ELEMENT_TIME as eventTime, 
+	            	R.vehicleID as vehicleID,
+	            	R.vehicleAssetName as vehicleAssetName
+	            FROM 
+	            	inputChannel as R
+			)	            	
+	        ]]></query>
+		</rules>
+    </processor>
+</wlevs:config>
