@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>BMIProcessor</name>
+        <rules>
+
+            <query id="BMIClassIncreasedQ">
+       		<![CDATA[
+         	ISTREAM(
+	         	SELECT patientID, 
+	         		   oldBMIValue, oldBMIClass, oldMeasureDateTime, 
+	         		   newBMIValue, newBMIClass, newMeasureDateTime,
+	         		   bmiClassDiff, bmiValueDiff,
+	         		   'Class Alert' as alertType
+	         	FROM BMIChangeChannel [NOW]
+	         	WHERE bmiClassDiff >= 1
+	         )
+       		]]> 
+		    </query>
+            <query id="BMIValueIncreasedQ">
+       		<![CDATA[
+         	ISTREAM(
+	         	SELECT patientID, 
+	         		   oldBMIValue, oldBMIClass, oldMeasureDateTime, 
+	         		   newBMIValue, newBMIClass, newMeasureDateTime,
+	         		   bmiClassDiff, bmiValueDiff,
+	         		   'Value Alert' as alertType
+	         	FROM BMIChangeChannel [NOW]
+	         	WHERE bmiValueDiff >= 1
+	         )
+       		]]> 
+		    </query>
+
+
+<!--
+            <view id="BMIClassIncreasedView">
+       		<![CDATA[
+         	ISTREAM(
+	         	SELECT *
+	         	FROM BMIChangeChannel [NOW]
+	         	WHERE bmiClassDiff >= 1
+	         )
+       		]]> 
+		    </view>
+            <view id="BMIValueIncreasedView">
+       		<![CDATA[
+         	ISTREAM(
+	         	SELECT *
+	         	FROM BMIChangeChannel [NOW]
+	         	WHERE bmiValueDiff >= 1
+	         )
+       		]]> 
+		    </view>
+ 		    
+            <query id="BMIClassIncreasedQuery"> 
+            <![CDATA[ 
+            ISTREAM(
+	            SELECT *
+	            FROM BMIClassIncreasedView [NOW]           
+            ) 
+            ]]> 
+            </query>
+            <query id="BMIValueIncreasedQuery"> 
+            <![CDATA[ 
+            ISTREAM(
+	            SELECT *
+	            FROM BMIValueIncreasedView [NOW]           
+            ) 
+            ]]> 
+            </query>
+ -->                        
+        </rules>
+    </processor>
+</wlevs:config>

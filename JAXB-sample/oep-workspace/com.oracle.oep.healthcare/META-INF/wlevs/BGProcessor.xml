@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>BGProcessor</name>
+        <rules>
+        <view id="MorningView">
+        <![CDATA[
+         	ISTREAM(
+	         	SELECT *
+	         	FROM BGInputChannel [NOW]
+	         	WHERE measureType = 0 
+	         )
+       		]]> 
+        </view>
+        <view id="AfterMealView">
+        <![CDATA[
+         	ISTREAM(
+	         	SELECT *
+	         	FROM BGInputChannel [NOW]
+	         	WHERE measureType = 1 
+	         )
+       		]]> 
+        </view>
+        <view id="BeforeBedView">
+        <![CDATA[
+         	ISTREAM(
+	         	SELECT *
+	         	FROM BGInputChannel [NOW]
+	         	WHERE measureType = 2 
+	         )
+       		]]> 
+        </view>
+       	<query id="MorningQuery">
+       	<![CDATA[
+         	ISTREAM(
+	         	SELECT patientID, 
+	         		   glucose,
+	         		   measureType,
+	         		   measureDateTime,	         		   
+	         		   'Morning Glucose Alert' as alertType
+	         	FROM MorningView [NOW]
+	         	WHERE glucose < 4.0 OR glucose > 7.0 
+	         )
+       		]]> 
+		</query>
+		<query id="AfterMealQuery">
+       	<![CDATA[
+         	ISTREAM(
+	         	SELECT patientID, 
+	         		   glucose,
+	         		   measureType,
+	         		   measureDateTime,	         		   
+	         		   'After Meal Glucose Alert' as alertType
+	         	FROM AfterMealView [NOW]
+	         	WHERE glucose > 10.0 
+	         )
+       		]]> 
+		 </query>
+		<query id="BeforeBedQuery">
+       	<![CDATA[
+         	ISTREAM(
+	         	SELECT patientID, 
+	         		   glucose,
+	         		   measureType,
+	         		   measureDateTime,	         		   
+	         		   'Before Bed Glucose Alert' as alertType
+	         	FROM BeforeBedView [NOW]
+	         	WHERE glucose > 8.0 
+	         )
+       		]]> 
+		 </query>		 	 		   
+	</rules>
+    </processor>
+</wlevs:config>
+

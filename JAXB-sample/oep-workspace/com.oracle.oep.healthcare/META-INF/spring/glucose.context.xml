@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_0_0_0.xsd">
+
+
+	<wlevs:adapter id="BloodGlucoseAdapter" provider="csvgen">
+		<wlevs:listener ref="BGInputChannel" />
+		<wlevs:instance-property name="port" value="9052" />
+		<wlevs:instance-property name="eventTypeName" value="BGEvent" />
+		<wlevs:instance-property name="eventPropertyNames" value="patientID,glucoseD,measureTypeI,measureDateTimeL" />
+	</wlevs:adapter>
+	<wlevs:channel id="BGInputChannel" event-type="BGEvent">
+		<wlevs:listener ref="BGProcessor" />
+	</wlevs:channel>
+	<wlevs:processor id="BGProcessor">
+		<wlevs:listener ref="BGOutputChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="BGOutputChannel" event-type="BGAlertType">
+		<wlevs:listener ref="GenerateBGAlert" />
+	</wlevs:channel>
+
+	<wlevs:event-bean id="GenerateBGAlert"
+		class="com.oracle.cep.eventbean.GenerateAlerts">
+		<wlevs:listener ref="BGAlertChannel" />
+	</wlevs:event-bean>
+	<wlevs:channel id="BGAlertChannel" event-type="ActivitiesInputType">
+		<wlevs:listener ref="AlertJMSAdapter" />
+	</wlevs:channel>
+	
+
+</beans>

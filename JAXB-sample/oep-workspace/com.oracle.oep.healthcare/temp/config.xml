@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    
+    <channel>
+	    <name>BMIInputChannel</name>
+	    <max-size>50000</max-size>
+	    <max-threads>10</max-threads>
+	    <heartbeat>10000</heartbeat>    
+    </channel>
+
+    
+</wlevs:config>
+

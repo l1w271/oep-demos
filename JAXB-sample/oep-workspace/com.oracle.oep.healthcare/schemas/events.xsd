@@ -1,0 +1,66 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xmlns.oracle.com/ns/healthcare"
+        xmlns:h="http://xmlns.oracle.com/ns/healthcare"
+        elementFormDefault="qualified">
+  
+  <element name="BMIAlert" type="h:BMIAlertType"/> 
+  <element name="BPAlert" type="h:BPAlertType"/> 
+  <element name="BGAlert" type="h:BGAlertType"/> 
+  <element name="HBA1CAlert" type="h:HBA1CAlertType"/> 
+
+  <complexType name="BMIAlertType">
+    <sequence>
+      <element name="patientID" type="string" minOccurs="0"/>
+      <element name="alertType" type="string" minOccurs="0"/>
+      <element name="newBMIValue" type="double" minOccurs="0"/>
+      <element name="oldBMIValue" type="double" minOccurs="0"/>	  
+      <element name="bmiValueDiff" type="double" minOccurs="0"/>
+      <element name="newBMIClass" type="int" minOccurs="0"/>
+      <element name="oldBMIClass" type="int" minOccurs="0"/>
+      <element name="bmiClassDiff" type="int" minOccurs="0"/>   
+      <element name="newMeasureDateTime" type="long" minOccurs="0"/>   
+      <element name="oldMeasureDateTime" type="long" minOccurs="0"/>            
+	</sequence>
+  </complexType>
+
+  <complexType name="BPAlertType">
+    <sequence>
+      <element name="patientID" type="string" minOccurs="0"/>
+      <element name="alertType" type="string" minOccurs="0"/>
+      <element name="oldSystolic" type="int" minOccurs="0"/>
+      <element name="oldDiastolic" type="int" minOccurs="0"/>
+      <element name="oldBPClass" type="int" minOccurs="0"/>
+      <element name="newSystolic" type="int" minOccurs="0"/>
+      <element name="newDiastolic" type="int" minOccurs="0"/>
+      <element name="newBPClass" type="int" minOccurs="0"/>      
+      <element name="bpClassDiff" type="int" minOccurs="0"/>
+      <element name="systolicDiff" type="int" minOccurs="0"/>
+      <element name="diastolicDiff" type="int" minOccurs="0"/>            
+      <element name="newMeasureDateTime" type="long" minOccurs="0"/>   
+      <element name="oldMeasureDateTime" type="long" minOccurs="0"/>      
+	</sequence>
+  </complexType>
+
+  <complexType name="BGAlertType">
+    <sequence>
+      <element name="patientID" type="string" minOccurs="0"/>
+      <element name="alertType" type="string" minOccurs="0"/>
+      <element name="glucose" type="double" minOccurs="0"/>	 
+      <element name="measureType" type="int" minOccurs="0"/>   
+	  <element name="measureDateTime" type="long" minOccurs="0"/>	         		  
+	</sequence>
+  </complexType>
+
+  <complexType name="HBA1CAlertType">
+    <sequence>
+      <element name="patientID" type="string" minOccurs="0"/>
+      <element name="alertType" type="string" minOccurs="0"/>
+      <element name="HBA1CMeasurement" type="double" minOccurs="0"/>   
+	  <element name="measureDateTime" type="long" minOccurs="0"/>	         		  
+	</sequence>
+  </complexType>
+
+
+
+</schema>
+

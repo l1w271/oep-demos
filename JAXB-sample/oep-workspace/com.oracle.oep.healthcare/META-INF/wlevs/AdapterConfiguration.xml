@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+ 
+ <!-- 
+    <jms-adapter>
+        <name>AlertJMSAdapter</name>
+        <jndi-provider-url>t3://dadvmh0025.us.oracle.com:8001</jndi-provider-url>
+        <jndi-factory>weblogic.jndi.WLInitialContextFactory</jndi-factory>
+        <connection-jndi-name>jms/HealthcareConnectionFactory</connection-jndi-name>
+        <destination-jndi-name>jms/OutboundAlerts</destination-jndi-name>
+        <user>weblogic</user>
+        <password>welcome1</password>        
+        <concurrent-consumers>1</concurrent-consumers>
+        <session-transacted>false</session-transacted>
+    </jms-adapter>
+    
+    --> 
+    
+    <jms-adapter>
+        <name>AlertJMSAdapter</name>
+        <jndi-provider-url>t3://localhost:7001</jndi-provider-url>
+        <jndi-factory>weblogic.jndi.WLInitialContextFactory</jndi-factory>
+        <connection-jndi-name>jms/HealthcareConnectionFactory</connection-jndi-name>
+        <destination-jndi-name>jms/OutboundAlerts</destination-jndi-name>
+        <concurrent-consumers>1</concurrent-consumers>
+        <session-transacted>false</session-transacted>
+    </jms-adapter>
+        
+</wlevs:config>

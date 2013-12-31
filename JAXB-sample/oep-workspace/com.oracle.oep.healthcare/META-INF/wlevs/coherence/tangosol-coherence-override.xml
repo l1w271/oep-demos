@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+
+<!--
+	This operational configuration override file is set up for use with Coherence in
+	a development mode.
+-->
+<coherence xml-override="/tangosol-coherence-override.xml">
+	<cluster-config>
+		<member-identity>
+			<cluster-name>com.oracle.oep.healthcare</cluster-name>
+		</member-identity>
+
+	</cluster-config>
+</coherence>

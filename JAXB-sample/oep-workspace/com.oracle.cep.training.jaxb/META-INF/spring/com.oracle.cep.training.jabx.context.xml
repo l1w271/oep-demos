@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_0_0_0.xsd">
+
+
+    <wlevs:event-type-repository>
+        <wlevs:event-type type-name="MeterStateEvent">
+            <wlevs:class>com.oracle.cep.demo.jaxb.event.MeterStateEvent</wlevs:class>
+        </wlevs:event-type>
+    </wlevs:event-type-repository>
+
+	<wlevs:adapter id="MeterStateEventsAdapter" provider="jms-inbound">
+		<wlevs:instance-property name="converterBean" ref="JmsJaxbMessageConverter"/>
+		<wlevs:listener ref="MeterStateInputChannel" />
+	</wlevs:adapter>
+	
+	<bean id="JmsJaxbMessageConverter" class="com.oracle.cep.training.converter.InboundJmsJaxbMessageConverter"/>
+	
+	<wlevs:channel id="MeterStateInputChannel" event-type="MeterStateEvent">
+		<wlevs:listener ref="MeterStateProcessor" />
+	</wlevs:channel>
+	<wlevs:processor id="MeterStateProcessor">
+		<wlevs:listener ref="MeterStateOutputChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="MeterStateOutputChannel" event-type="MeterStateEvent">
+		<wlevs:listener ref="bean" />
+	</wlevs:channel>
+	<bean id="bean" class="com.oracle.cep.training.listeners.EventListener">
+	</bean>
+</beans>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>HBA1CProcessor</name>
+        <rules>
+       	<query id="HBA1CQuery">
+       	<![CDATA[
+         	ISTREAM(
+	         	SELECT patientID, 
+	         		   HBA1CMeasurement,
+	         		   measureDateTime,	         		   
+	         		   'HbA1c Alert' as alertType
+	         	FROM HBA1CInputChannel [NOW]
+	         	WHERE HBA1CMeasurement > 48.0  
+	         )
+       		]]> 
+		</query>	 	 		   
+	</rules>
+    </processor>
+</wlevs:config>
+

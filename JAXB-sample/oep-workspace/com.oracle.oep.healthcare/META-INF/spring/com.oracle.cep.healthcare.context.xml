@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_0_0_0.xsd">
+
+	
+	<wlevs:event-type-repository>
+		<wlevs:event-type type-name="BMIEvent">
+			<wlevs:class>com.oracle.cep.event.BMIEvent</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="BPMeasurementEvent">
+			<wlevs:class>com.oracle.cep.event.BPMeasurementEvent</wlevs:class>
+		</wlevs:event-type>	
+		<wlevs:event-type type-name="BGEvent">
+			<wlevs:class>com.oracle.cep.event.BGEvent</wlevs:class>
+		</wlevs:event-type>		
+		<wlevs:event-type type-name="HBA1CEvent">
+			<wlevs:class>com.oracle.cep.event.HBA1CEvent</wlevs:class>
+		</wlevs:event-type>	
+		<wlevs:event-type type-name="BMIChange">
+			<wlevs:class>com.oracle.cep.event.BMIChange</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="BMIAlertType">
+			<wlevs:class>com.oracle.cep.demo.jaxb.event.BMIAlertType</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="BPAlertType">
+			<wlevs:class>com.oracle.cep.demo.jaxb.event.BPAlertType</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="BGAlertType">
+			<wlevs:class>com.oracle.cep.demo.jaxb.event.BGAlertType</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="HBA1CAlertType">
+			<wlevs:class>com.oracle.cep.demo.jaxb.event.HBA1CAlertType</wlevs:class>
+		</wlevs:event-type>		
+		<wlevs:event-type type-name="BPChange">
+			<wlevs:class>com.oracle.cep.event.BPChange</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="PatientBMI">
+			<wlevs:class>com.oracle.coherence.data.PatientBMI</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="PatientBP">
+			<wlevs:class>com.oracle.coherence.data.PatientBP</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="ActivitiesInputType">
+			<wlevs:class>com.oracle.cep.siebel.jaxb.event.ActivitiesInputType</wlevs:class>
+		</wlevs:event-type>
+		
+	</wlevs:event-type-repository>
+
+	<!-- Caching Configuration -->
+
+	<!-- The value of the provider attribute is the only coherence-specific 
+	configuration in the Spring application context. -->
+	<wlevs:caching-system id="HealthcareCachingSystem" provider="coherence" />
+
+	<wlevs:cache id="BMICache" caching-system="HealthcareCachingSystem" value-type="PatientBMI" key-properties="patientID">
+		<wlevs:cache-listener>
+			<bean class="com.oracle.cep.listener.CacheListener"/>			
+		</wlevs:cache-listener>	
+	</wlevs:cache>
+
+	<wlevs:cache id="BPCache" caching-system="HealthcareCachingSystem" value-type="PatientBP" key-properties="patientID">
+		<wlevs:cache-listener>
+			<bean class="com.oracle.cep.listener.CacheListener"/>			
+		</wlevs:cache-listener>	
+	</wlevs:cache>
+	
+	<wlevs:adapter id="BMIAdapter" provider="csvgen">
+		<wlevs:listener ref="BMIInputChannel" />
+		<wlevs:instance-property name="port" value="9050" />
+		<wlevs:instance-property name="eventTypeName" value="BMIEvent" />
+		<wlevs:instance-property name="eventPropertyNames" value="patientID,heightD,weightD,measureDateTimeL" />
+	</wlevs:adapter>
+
+	<wlevs:adapter id="BloodPressureAdapter" provider="csvgen">
+		<wlevs:listener ref="BPInputChannel" />
+		<wlevs:instance-property name="port" value="9051" />
+		<wlevs:instance-property name="eventTypeName" value="BPMeasurementEvent" />
+		<wlevs:instance-property name="eventPropertyNames" value="patientID,systolicI,diastolicI,measureDateTimeL" />
+	</wlevs:adapter>
+
+	<wlevs:event-bean id="BPCacheInvoke"
+		class="com.oracle.cep.cache.BPCacheInvoke">
+		<wlevs:listener ref="BPChangeChannel" />
+		<wlevs:instance-property name="bpCache" ref="BPCache" />		
+	</wlevs:event-bean>
+
+
+	<wlevs:channel id="BMIInputChannel" event-type="BMIEvent">
+		<wlevs:listener ref="BMICacheInvoke" />
+	</wlevs:channel>
+
+	<wlevs:event-bean id="BMICacheInvoke"
+		class="com.oracle.cep.cache.BMICacheInvoke">
+		<wlevs:listener ref="BMIChangeChannel" />
+		<wlevs:instance-property name="bmiCache" ref="BMICache" />		
+	</wlevs:event-bean>
+
+
+	<wlevs:processor id="BMIProcessor">
+		<wlevs:listener ref="BMIOutputChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="BMIOutputChannel" event-type="BMIChange">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Healthcare.BMIOutputChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="GenerateBMIAlert" />
+	</wlevs:channel>
+
+	<wlevs:channel id="BMIChangeChannel" event-type="BMIChange">
+		<wlevs:listener ref="BMIProcessor" />
+	</wlevs:channel>
+
+	<wlevs:channel id="BPInputChannel" event-type="BPMeasurementEvent">
+		<wlevs:listener ref="BPCacheInvoke" />
+	</wlevs:channel>
+
+	<wlevs:channel id="BPChangeChannel" event-type="BPChange">
+		<wlevs:listener ref="BPProcessor" />
+	</wlevs:channel>
+	<wlevs:processor id="BPProcessor">
+		<wlevs:listener ref="BPOutputChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="BPOutputChannel" event-type="BPChange">
+		<wlevs:listener>
+			<bean class="com.oracle.cep.listener.EventListener">
+				<property name="nodeName" value="Healthcare.BPOutputChannel" />
+			</bean>
+		</wlevs:listener>
+		<wlevs:listener ref="GenerateBPAlert" />
+	</wlevs:channel>
+	<wlevs:event-bean id="GenerateBMIAlert"
+		class="com.oracle.cep.eventbean.GenerateAlerts">
+		<wlevs:listener ref="BMIAlertChannel" />
+	</wlevs:event-bean>
+	<wlevs:channel id="BMIAlertChannel" event-type="ActivitiesInputType">
+		<wlevs:listener ref="AlertJMSAdapter" />
+	</wlevs:channel>
+	<wlevs:adapter id="AlertJMSAdapter" provider="jms-outbound">
+		<wlevs:instance-property name="converterBean" ref="OutboundJmsJaxbMessageConverter"/>
+	</wlevs:adapter>
+	
+	<bean id="OutboundJmsJaxbMessageConverter" class="com.oracle.cep.adapter.OutboundJmsJaxbMessageConverter">
+		<!--  <property name="jaxbContextPackageList" value="com.oracle.cep.demo.jaxb.event"/>
+		-->
+		<property name="jaxbContextPackageList" value="com.oracle.cep.siebel.jaxb.event"/>
+	</bean>
+
+	<wlevs:event-bean id="GenerateBPAlert"
+		class="com.oracle.cep.eventbean.GenerateAlerts">
+		<wlevs:listener ref="BPAlertChannel" />
+
+	</wlevs:event-bean>
+	<wlevs:channel id="BPAlertChannel" event-type="ActivitiesInputType">
+		<wlevs:listener ref="AlertJMSAdapter" />
+	</wlevs:channel>
+
+</beans>
+
+<!-- 	
+   <wlevs:adapter id="BMIPubSubAdapter" provider="httppub" />
+ -->
+
+ <!-- 
+    <wlevs:event-bean id="WebContentRegistration" class="com.oracle.cep.adapter.WebContentRegistration">
+    	<wlevs:instance-property name="serverPath" value="/examples"/>
+    	<wlevs:instance-property name="resourcePath" value="/webResources"/>
+    </wlevs:event-bean>    
+ -->    

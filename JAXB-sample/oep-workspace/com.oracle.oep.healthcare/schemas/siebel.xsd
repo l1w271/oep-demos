@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xmlns.oracle.com/ns/healthcare"
+        xmlns:h="http://xmlns.oracle.com/ns/healthcare"     
+        elementFormDefault="qualified">
+
+  <element name="ActivitiesInput" type="h:ActivitiesInputType"/> 
+  <element name="ActivitiesOutput" type="h:ActivitiesOutputType"/> 
+
+  <complexType name="ActivitiesInputType">
+	<sequence>
+		<element name="inpType" type="string"/>
+		<element name="Process_spcInstance_spcId" type="string"/>
+		<element name="inpDescription" type="string"/>
+		<element name="Object_spcId" type="string"/>
+		<element name="ActId" type="string"/>
+		<element name="Siebel_spcOperation_spcObject_spcId" type="string"/>
+		<element name="CaseNum" type="string"/>
+		<element name="Error_spcCode" type="string"/>
+		<element name="Error_spcMessage" type="string"/>
+	</sequence>
+  </complexType>
+
+  <complexType name="ActivitiesOutputType">
+	<sequence>
+		<element name="ActId" type="string"/>
+		<element name="CaseNum" type="string"/>
+		<element name="Error_spcCode" type="string"/>
+		<element name="Error_spcMessage" type="string"/>
+		<element name="Object_spcId" type="string"/>
+		<element name="Process_spcInstance_spcId" type="string"/>
+		<element name="Siebel_spcOperation_spcObject_spcId" type="string"/>
+		<element name="inpDescription" type="string"/>
+		<element name="inpType" type="string"/>
+	</sequence>
+  </complexType>
+
+</schema>

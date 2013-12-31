@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n1:config
+ xsi:schemaLocation="http://www.bea.com/ns/wlevs/config/application wlevs_application_config.xsd"
+ xmlns:n1="http://www.bea.com/ns/wlevs/config/application"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ 
+    <jms-adapter>
+        <name>MeterStateEventsAdapter</name>
+        <jndi-provider-url>t3://localhost:7001</jndi-provider-url>
+        <jndi-factory>weblogic.jndi.WLInitialContextFactory</jndi-factory>
+        <connection-jndi-name>jms/SmartMeterConnectionFactory</connection-jndi-name>
+        <destination-jndi-name>jms/MeterStateEvents</destination-jndi-name>
+        <user>weblogic</user>
+        <password>welcome1</password>
+        <session-transacted>false</session-transacted>
+    </jms-adapter>
+
+</n1:config>

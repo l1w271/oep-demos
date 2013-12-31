@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE cache-config SYSTEM "cache-config.dtd">
+
+<cache-config>
+	<caching-scheme-mapping>
+		<cache-mapping>
+			<cache-name>BMICache</cache-name>
+			<scheme-name>example-distributed</scheme-name>
+		</cache-mapping>
+		
+		<cache-mapping>
+			<cache-name>BPCache</cache-name>
+			<scheme-name>example-distributed</scheme-name>
+		</cache-mapping>
+		
+	</caching-scheme-mapping>
+
+	<caching-schemes>
+	
+		<replicated-scheme>
+      		<scheme-name>example-distributed</scheme-name>
+      		<service-name>ReplicatedCache</service-name>
+
+      		<backing-map-scheme>
+        		<local-scheme>
+          		<scheme-ref>example-backing-map</scheme-ref>
+        		</local-scheme>
+      		</backing-map-scheme>
+
+      		<autostart>true</autostart>
+    	</replicated-scheme>
+    	
+    	<local-scheme>
+      		<scheme-name>example-backing-map</scheme-name>
+      			<eviction-policy>HYBRID</eviction-policy>
+      			<high-units>0</high-units>
+      			<expiry-delay>0</expiry-delay>
+    	</local-scheme>
+	
+	</caching-schemes>
+</cache-config>

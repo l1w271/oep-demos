@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE cache-config SYSTEM "cache-config.dtd">
+
+<cache-config>
+	<caching-scheme-mapping>
+		<cache-mapping>
+			<cache-name>ExampleCache</cache-name>
+			<scheme-name>distributed-preload</scheme-name>
+		</cache-mapping>
+	</caching-scheme-mapping>
+
+	<caching-schemes>
+	
+	<distributed-scheme>
+      <scheme-name>distributed-preload</scheme-name>
+      <service-name>DistributedCache-Preload</service-name>
+
+      <backing-map-scheme>
+        <local-scheme>
+          <scheme-ref>local-binary</scheme-ref>
+        </local-scheme>
+      </backing-map-scheme>
+
+      <autostart>true</autostart>
+    </distributed-scheme>
+	
+	</caching-schemes>
+</cache-config>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_0_0_0.xsd">
+
+
+	<wlevs:adapter id="HBA1CAdapter" provider="csvgen">
+		<wlevs:listener ref="HBA1CInputChannel" />
+		<wlevs:instance-property name="port" value="9053" />
+		<wlevs:instance-property name="eventTypeName" value="HBA1CEvent" />
+		<wlevs:instance-property name="eventPropertyNames" value="patientID,HBA1CMeasurementD,measureDateTimeL" />
+	</wlevs:adapter>
+	<wlevs:channel id="HBA1CInputChannel" event-type="HBA1CEvent">
+		<wlevs:listener ref="HBA1CProcessor" />
+	</wlevs:channel>
+	<wlevs:processor id="HBA1CProcessor">
+		<wlevs:listener ref="HBA1COutputChannel" />
+	</wlevs:processor>
+	<wlevs:channel id="HBA1COutputChannel" event-type="HBA1CAlertType">
+		<wlevs:listener ref="GenerateHBA1CAlert" />
+	</wlevs:channel>
+	
+	<wlevs:event-bean id="GenerateHBA1CAlert"
+		class="com.oracle.cep.eventbean.GenerateAlerts">
+		<wlevs:listener ref="HBA1CAlertChannel" />
+	</wlevs:event-bean>
+	<wlevs:channel id="HBA1CAlertChannel" event-type="ActivitiesInputType">
+		<wlevs:listener ref="AlertJMSAdapter" />
+	</wlevs:channel>
+	
+
+</beans>

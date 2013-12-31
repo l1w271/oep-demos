@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>BPProcessor</name>
+        <rules>
+
+            <query id="BPClassChanged">
+       		<![CDATA[
+         	ISTREAM(
+	         	SELECT patientID, 
+	         	 	   oldSystolic, oldDiastolic, oldBPClass, oldMeasureDateTime, 
+	         		   newSystolic, newDiastolic, newBPClass, newMeasureDateTime,
+	         		   systolicDiff, diastolicDiff,	bpClassDiff,       		   	         		    
+	         		   'Blood Pressure Change from: ' || oldBPClass || ' to: ' || newBPClass as alertType
+	         	FROM BPChangeChannel [NOW]
+	         	WHERE newBPClass != oldBPClass
+	         )
+       		]]> 
+		    </query>       
+        </rules>
+    </processor>
+</wlevs:config>
+
