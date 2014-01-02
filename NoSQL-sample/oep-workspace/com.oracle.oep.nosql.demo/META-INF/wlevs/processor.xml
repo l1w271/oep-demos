@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n1:config
+    xsi:schemaLocation="http://www.bea.com/ns/wlevs/config/application wlevs_application_config.xsd"
+    xmlns:n1="http://www.bea.com/ns/wlevs/config/application"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <processor>
+        <name>P1</name>
+        <rules>
+            <query id="q1"><![CDATA[		
+			    SELECT 	address, customerName, creditScore, price, item	
+			  	FROM 	S1 [NOW], CustomerInfo as cust
+			    WHERE   S1.userId = cust.userId 
+			    AND S1.price > 1000
+            ]]></query>
+            
+            <!-- <query id="q1"><![CDATA[
+    
+    SELECT  customerName, creditScore, price
+  
+    FROM  S1 [Now], CustomerDescription as cust
+    
+    WHERE   S1.userId = cust.userId AND S1.price > 1000 
+        
+            ]]></query>-->
+        </rules>
+    </processor>
+</n1:config>

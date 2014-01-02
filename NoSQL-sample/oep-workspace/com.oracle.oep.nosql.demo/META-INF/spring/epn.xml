@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xmlns:nosqldb="http://www.oracle.com/ns/oep/nosqldb"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_1_1_6.xsd
+  http://www.oracle.com/ns/oep/nosqldb
+  http://www.oracle.com/ns/oep/nosqldb/oep-nosqldb.xsd">
+  
+    <wlevs:event-type-repository>
+        <wlevs:event-type type-name="SalesEvent">
+          <wlevs:class>com.bea.wlevs.example.SalesEvent</wlevs:class>
+        </wlevs:event-type>
+        <wlevs:event-type type-name="CustomerDescription">
+          <wlevs:class>com.bea.wlevs.example.CustomerDescription</wlevs:class>
+          
+          <!--  
+          <wlevs:properties>
+            <wlevs:property name="userId" type="char"/>
+            <wlevs:property name="creditScore" type="int"/>
+            <wlevs:property name="address" type="char"/>
+            <wlevs:property name="customerName" type="char"/>
+          </wlevs:properties>
+          -->
+        </wlevs:event-type>
+        <wlevs:event-type type-name="LargeSalesEvent">
+          <wlevs:class>com.bea.wlevs.example.LargeSalesEvent</wlevs:class>
+        </wlevs:event-type>
+    </wlevs:event-type-repository>
+
+    <!-- Assemble EPN (event processing network) -->
+    <wlevs:adapter id="A1" class="com.bea.wlevs.example.SalesAdapter" >
+        <wlevs:listener ref="S1"/>
+    </wlevs:adapter>
+
+	<wlevs:channel id="S1" event-type="SalesEvent">
+		<wlevs:listener ref="P1" />
+	</wlevs:channel>
+        
+    <!--   
+    <hadoop:file id="CustomerDescription" event-type="CustomerDescription" path="CustomerDescription.txt" />
+     -->
+     <nosqldb:store id="CustomerInfo" store-name="kvstore" event-type="CustomerDescription"  store-locations="localhost:5000" />
+
+    <wlevs:processor id="P1">
+        <wlevs:table-source ref="CustomerInfo" />
+    </wlevs:processor>
+    
+    <wlevs:channel id="S2" advertise="true" event-type="LargeSalesEvent" >
+        <wlevs:listener ref="bean"/>
+        <wlevs:source ref="P1"/>
+    </wlevs:channel>
+
+    <!-- Create business object -->
+    <bean id="bean" class="com.bea.wlevs.example.OutputBean" />
+
+</beans>
+
+
