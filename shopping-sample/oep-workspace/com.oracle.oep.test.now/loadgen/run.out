@@ -1,0 +1,27 @@
+Settings:
+test.propFile=sentiment.prop
+test.mode=client
+test.host=
+test.port=9020
+test.verbose=false
+test.statInterval=2000
+test.latencyStats=false
+test.rate=1
+test.startRate=1
+test.rampUpSecs=0
+test.timeSyncPort=0
+test.senders=1
+test.reportUnchangedQuotes=true
+test.filePerSender=false
+test.secs=10
+test.packetType=CSV
+test.stocksFile=
+test.stocksFileLength=0
+test.csvDataFile=sentiment.csv
+test.ticksPerPacket=20
+test.loopBack=false
+test.senderSkew=0
+
+
+INFO: 1 senders
+INFO:  PacketSender (name=Send0 host= port=9020) connected and ready to start.   Ticks/Second = 2000.   Micros per tick = 500.

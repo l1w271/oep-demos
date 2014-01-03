@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xmlns:jdbc="http://www.oracle.com/ns/ocep/jdbc"
+       xmlns:spatial="http://www.oracle.com/ns/ocep/spatial"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_1_1_7.xsd
+  http://www.oracle.com/ns/ocep/jdbc
+  http://www.oracle.com/ns/ocep/jdbc/ocep-jdbc.xsd
+  http://www.oracle.com/ns/ocep/spatial
+  http://www.oracle.com/ns/ocep/spatial/ocep-spatial.xsd">
+
+	<wlevs:event-type-repository>
+		<wlevs:event-type type-name="Sentiment">
+			<wlevs:class>com.oracle.oep.demo.event.Sentiment</wlevs:class>
+		</wlevs:event-type>
+	</wlevs:event-type-repository>
+
+   <wlevs:adapter id="SentimentAdapter" provider="csvgen">
+    	<wlevs:instance-property name="port" value="9020"/>
+        <wlevs:instance-property name="eventTypeName" value="Sentiment"/>
+        <wlevs:instance-property 
+                name="eventPropertyNames"
+                value="watchName,sentimentScore"/>
+        <wlevs:listener ref="SentimentInputChannel"/>
+    </wlevs:adapter>
+    
+	<wlevs:channel id="SentimentInputChannel" event-type="Sentiment">
+		<wlevs:listener ref="SentimentScoreProcessor" />
+	</wlevs:channel>
+
+	<wlevs:processor id="SentimentScoreProcessor">
+		<wlevs:listener ref="OutputChannel" />
+	</wlevs:processor>
+
+    <wlevs:channel id="OutputChannel" event-type="Sentiment">
+         <wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="OutputChannel" />
+			</bean>
+		</wlevs:listener>
+        
+    </wlevs:channel>
+    
+</beans>
+

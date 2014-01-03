@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application"
+              xmlns:jdbc="http://www.oracle.com/ns/ocep/config/jdbc">
+    <processor>
+        <name>SentimentScoreProcessor</name>
+        <rules>
+        <!--  
+         <query id="SendWatchListAlertQuery"> 
+            <![CDATA[
+            SELECT *
+            FROM SentimentInputChannel
+            ]]> 
+         </query>
+        -->
+        
+       <!--  
+        <query id="SendWatchListAlertQuery"> 
+            <![CDATA[
+            ISTREAM(
+            SELECT *
+            FROM SentimentInputChannel
+            )
+            ]]> 
+         </query>
+        
+        -->
+        
+ 		<query id="SendWatchListAlertQuery"> 
+            <![CDATA[
+            SELECT *
+            FROM SentimentInputChannel [RANGE 3 SECONDS]
+            ]]> 
+         </query>
+		
+		<!-- 
+		<query id="AvgSentiment"> 
+            <![CDATA[
+            SELECT watchName, AVG(sentimentScore) as sentimentScore
+            FROM SentimentInputChannel [PARTITION BY watchName ROWS 2]
+            GROUP BY watchName             
+            ]]> 
+         </query>
+		 -->
+         
+         <!--  
+         <query id="AvgSentiment"> 
+            <![CDATA[
+            SELECT watchName, AVG(sentimentScore) as sentimentScore
+            FROM SentimentInputChannel [PARTITION BY watchName ROWS 1000 RANGE 10 SECONDS]
+            GROUP BY watchName             
+            ]]> 
+         </query>
+         -->
+         
+         
+        </rules>
+    </processor>
+</wlevs:config>
+
