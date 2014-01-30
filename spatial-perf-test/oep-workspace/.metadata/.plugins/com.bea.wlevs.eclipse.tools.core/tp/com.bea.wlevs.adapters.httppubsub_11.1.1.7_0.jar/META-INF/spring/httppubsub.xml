@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+    <bean id="httpPubFactory" class="com.bea.wlevs.adapters.httppubsub.HttpPubAdapterFactoryImpl">
+        <!--<property name="pubSubServerList" ref="pubsubServerInstances"/>-->
+    </bean>
+
+    <!--<osgi:list id="pubsubServerInstances" interface="com.bea.httppubsub.PubSubServer" cardinality="0..N"/>           -->
+
+    <osgi:service interface="com.bea.wlevs.ede.api.AdapterFactory" ref="httpPubFactory">
+        <osgi:service-properties>
+            <entry key="type" value="httppub"/>
+        </osgi:service-properties>
+    </osgi:service>
+
+    <osgi:service interface="com.bea.wlevs.ede.api.AdapterFactory">
+        <osgi:service-properties>
+            <entry key="type" value="httpsub"/>
+        </osgi:service-properties>
+        <bean class="com.bea.wlevs.adapters.httppubsub.HttpSubAdapterFactoryImpl"/>
+    </osgi:service>
+
+</beans>

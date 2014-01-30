@@ -1,0 +1,34 @@
+1) Name: Basic CQL Samples 
+
+BundleName: com.oracle.cep.example.basic.cql
+
+2) Description: 
+
+This is an easy-to-use example that show several samples of basic CQL and CEP integration with Coherence. It uses the loadgen utility to read events from a file and send them to the loadgen socket adapter. A simple dashboard created using the http pub/sub adapter shows all the events that are being received and the output of the queries. It contains an example of the configuration of a Coherence cache and CQL queries that join to the cache.
+
+3) Use case: (e.g. when to use it)
+
+Use this example to see running sample for many CQL patterns including filtering, counting events, aggregating data, partitioning event streams, performing a pattern match for non-event detection within a time window, inserting events into a coherence cache, joining to a coherence cache and using a case statement in CQL for state machine logic. 
+
+4) Procedure for running the application: 
+
+Import the project into the IDE with a configured Oracle CEP server. Add the applicaiton to the server.
+
+If running on Windows, you can start the loadgenerator utility by changing the "startDataFeed.cmd" and "startCacheCheck.cmd" scripts to set the "CEP_HOME" and "WORKSPACE_HOME" appropriately. Once edited, you can run the scripts by right-clicking and selecting open with "System Editor" and subsequently by double-clicking script name. 
+
+Alternatively (or if not running on Windows OS), you can copy the files in the "util" directory to your CEP load generator directory (i.e. <CEP_INSTALL>/ocep_11.1/utils/load-generator) and run "loadgen sample.prop" and "loadgen cache_check.prop".
+
+Open your browser to: http://localhost:9002/examples/index.html
+
+You can double-click on "Examples Dashboard.URL" to open this URL in your browser.
+
+You will get results for the "Filtered", "Count", "Aggregate", "Partition", "Pattern" and "Cache Events" tabs simply by running the "startDataFeed.cmd".
+To get results for the "Cache Output Event" and "Cache State Event" tabs, you will need to run "startCacheCheck".
+
+5) Application dependencies (e.g. server configuration needed to run example/pattern, database import, cache, etc.)
+
+You will need to make changes to add http pub/sub channels to your domain's config.xml file as indicated in util\config.xml.changes
+OR simply replace your domain's config.xml file with the one provided in the "util" directory.
+
+There are no application dependencies. The Coherence jars are included with CEP and the cache will start automatically when the server starts. 
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>AggregateProcessor</name>
+        <rules>
+            <query id="AggregateQuery"> 
+            <![CDATA[ 
+            ISTREAM(
+            SELECT SUM(eventIntValue) as eventTotal, eventKey
+            FROM inputChannel [range 60 minutes]
+            GROUP BY eventKey           
+            ) 
+            ]]> 
+            </query>
+        </rules>
+    </processor>
+</wlevs:config>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_1_1_7.xsd">
+
+    <wlevs:event-type-repository>
+       <wlevs:event-type type-name="PurchaseEvent">
+        	<wlevs:class>com.oracle.oep.event.PurchaseEvent</wlevs:class>
+       </wlevs:event-type>
+    </wlevs:event-type-repository>
+
+	<wlevs:event-bean id="PurchaseHTTPAdapter"
+		class="com.oracle.oep.adapter.PurchaseHTTPAdapter">
+		<wlevs:listener ref="InputChannel" />
+		<wlevs:instance-property name="contextString"
+			value="/purchaseApp" />		
+	</wlevs:event-bean>
+
+	<wlevs:channel event-type="PurchaseEvent" id="InputChannel">
+		<wlevs:listener ref="PurchaseProcessor" />
+	</wlevs:channel>
+	<wlevs:processor id="PurchaseProcessor">
+		<wlevs:listener ref="OutputChannel" />
+	</wlevs:processor>
+	<wlevs:channel event-type="PurchaseEvent" id="OutputChannel">
+		<wlevs:listener ref="OutputBean" />
+	</wlevs:channel>
+	<bean id="OutputBean" class="com.oracle.oep.adapter.OutputBean">
+	</bean>
+	
+	<wlevs:event-bean id="WebContentRegistration" class="com.oracle.oep.adapter.WebContentRegistration">
+    	<wlevs:instance-property name="serverPath" value="/purchaseEntry"/>
+    	<wlevs:instance-property name="resourcePath" value="/webResources"/>
+    </wlevs:event-bean>
+	
+</beans>
+

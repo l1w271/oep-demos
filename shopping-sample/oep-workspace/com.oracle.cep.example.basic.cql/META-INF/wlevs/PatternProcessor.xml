@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application">
+    <processor>
+        <name>PatternProcessor</name>
+        <rules>
+            <query id="PatternQuery"> 
+            <![CDATA[ 
+	            ISTREAM(
+	            SELECT match.eventKey as eventKey, 
+	            	   'SMS and Not Voice within 10 seconds' as eventType
+	            FROM inputChannel MATCH_RECOGNIZE 
+	            (            		        
+		        	PARTITION BY 
+		        		eventKey
+		        	MEASURES
+		        		SMS.eventKey as eventKey,
+		        		SMS.eventType as eventType
+		        	INCLUDE TIMER EVENTS
+		        	PATTERN (SMS NotVoice*)
+		        	DURATION 10	SECONDS	        	 
+		        	DEFINE 
+		        		SMS as eventType = 'sms',
+		        		NotVoice as eventType != 'voice'		                       
+	            ) AS match
+	            )
+            ]]> 
+            </query>
+        </rules>
+    </processor>
+</wlevs:config>
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application"
+              xmlns:jdbc="http://www.oracle.com/ns/ocep/config/jdbc">
+    
+    <channel>
+	    <name>PositionChannel</name>
+	    <max-size>6000</max-size>
+	    <max-threads>3</max-threads>
+    </channel>
+
+    <channel>
+	    <name>PositionChannel1</name>
+	    <max-size>2000</max-size>
+	    <max-threads>1</max-threads>
+    </channel>
+    
+    <channel>
+	    <name>PositionChannel2</name>
+	    <max-size>2000</max-size>
+	    <max-threads>1</max-threads>
+    </channel>
+
+    <channel>
+	    <name>PositionChannel3</name>
+	    <max-size>2000</max-size>
+	    <max-threads>1</max-threads>
+    </channel>    
+
+    
+    <channel>
+    	<name>BusinessesChannel</name>
+    </channel>
+    
+    <channel>
+    	<name>WithinDistanceChannel</name>
+    	<max-size>1000</max-size>
+    	<max-threads>2</max-threads>
+    </channel>
+    
+    
+    
+</wlevs:config>
+

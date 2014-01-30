@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="1" debugPort="8453" hostname="localhost" id="Oracle Event Processing v11.1 at localhost" name="Oracle Event Processing v11.1 at localhost" ocep.server.domainDirectory="/Users/Lloyd/Work/OEP_HOME/ps6_home/user_projects/domains/perf_domain/defaultserver" ocep.server.password="wlevs" ocep.server.remote="false" ocep.server.remoteip="10.148.122.6" ocep.server.remoteport="9002" ocep.server.startScript="/Users/Lloyd/Work/OEP_HOME/ps6_home/user_projects/domains/perf_domain/defaultserver/startwlevs.sh" ocep.server.stopScript="/Users/Lloyd/Work/OEP_HOME/ps6_home/user_projects/domains/perf_domain/defaultserver/stopwlevs.sh" ocep.server.username="wlevs" runtime-id="Oracle Event Processing v11.1" server-type="oracle.ocep.tools.core.server" server-type-id="oracle.ocep.tools.core.server" start-timeout="150" stop-timeout="60" timestamp="1">
+    <list key="ocep.server.modules" value0="com.bea.wlevs.eclipse.tools.core.module.wlevs:SpatialTest?SpatialTest"/>
+    <list key="modules" value0="SpatialTest::com.bea.wlevs.eclipse.tools.core.module.wlevs:SpatialTest?SpatialTest::wlevs.module::11.1"/>
+  </server>
+</servers>

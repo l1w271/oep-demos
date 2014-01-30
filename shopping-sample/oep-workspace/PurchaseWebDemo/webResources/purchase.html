@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Purchase</title>
+</head>
+<body>
+
+Enter purchase details:
+<!--  http://localhost:9002/shoppingAdmin -->
+ <form id="P1" name="PurchaseForm" action="/purchaseApp">
+ <table>
+ <tr>
+ <td>Customer ID:</td><td><input id="customerID" name="customerID" size="50" value="CUST_08"/></td>
+ </tr>
+  <tr>
+ <td>Card Number:</td><td><input id="cardNo" name="cardNo" size="50" value="4231798820309720"/></td>
+ </tr>
+  <tr>
+ <td>Price: </td><td><input id="price" name="price" size="20" value="29.98"/></td>
+ </tr>
+   <tr>
+ <td>Merchant ID: </td><td><input id="rtoMerchantID" name="rtoMerchantID" size="20" value="10016"/></td>
+ </tr>
+ <tr>
+ <td></td>
+ <td> <button type="submit" value="SubmitPurchase">Send</button> </td></tr>   
+ </table>
+ </form>
+  
+</body>
+</html>

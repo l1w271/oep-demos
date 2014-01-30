@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wlevs="http://www.bea.com/ns/wlevs/spring"
+       xmlns:jdbc="http://www.oracle.com/ns/ocep/jdbc"
+       xmlns:spatial="http://www.oracle.com/ns/ocep/spatial"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.bea.com/ns/wlevs/spring
+  http://www.bea.com/ns/wlevs/spring/spring-wlevs-v11_1_1_7.xsd
+  http://www.oracle.com/ns/ocep/jdbc
+  http://www.oracle.com/ns/ocep/jdbc/ocep-jdbc.xsd
+  http://www.oracle.com/ns/ocep/spatial
+  http://www.oracle.com/ns/ocep/spatial/ocep-spatial.xsd">
+
+
+	<wlevs:event-type-repository>
+		<wlevs:event-type type-name="BusinessData">
+			<wlevs:class>com.oracle.oep.event.BusinessData</wlevs:class>
+		</wlevs:event-type>
+		<wlevs:event-type type-name="TargetBusinessEvent">
+			<wlevs:class>com.oracle.oep.event.TargetBusinessEvent</wlevs:class>
+		</wlevs:event-type>		
+		<wlevs:event-type type-name="PositionEvent">
+			<wlevs:class>com.oracle.oep.event.PositionEvent</wlevs:class>
+		</wlevs:event-type>	
+	</wlevs:event-type-repository>
+
+	<wlevs:event-bean id="LoadBusinesses" class="com.oracle.oep.adapter.LoadBusinesses">
+		<wlevs:listener ref="BusinessesChannel" />
+		<wlevs:instance-property name="numberBusinesses" value="100" />
+    </wlevs:event-bean>
+
+	<wlevs:adapter id="PositionAdapter" provider="csvgen">
+		<wlevs:listener ref="PositionChannel" />
+		<wlevs:instance-property name="port" value="9020" />
+        <wlevs:instance-property name="eventTypeName" value="PositionEvent"/>
+        <wlevs:instance-property 
+                name="eventPropertyNames"
+                value="paymentID,industry,latd,lond"/>
+    </wlevs:adapter>
+
+	<wlevs:channel id="PositionChannel" event-type="PositionEvent">
+		<wlevs:instance-property name="partitionByEventProperty"
+			value="industryID" />
+		<wlevs:listener ref="PositionChannel1" />
+		<wlevs:listener ref="PositionChannel2" /> 
+		<wlevs:listener ref="PositionChannel3" />
+	</wlevs:channel>
+	
+	<!-- 
+		<wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="PositionChannel" />
+			</bean>
+		</wlevs:listener>
+	 -->
+
+
+
+	<wlevs:processor id="PositionProcessor1">
+		<wlevs:listener ref="WithinDistanceChannel" />
+	</wlevs:processor>
+	<wlevs:processor id="PositionProcessor2">
+		<wlevs:listener ref="WithinDistanceChannel" />
+	</wlevs:processor>
+	<wlevs:processor id="PositionProcessor3">
+		<wlevs:listener ref="WithinDistanceChannel" />
+	</wlevs:processor>	
+	
+	<wlevs:channel id="WithinDistanceChannel" event-type="TargetBusinessEvent">
+		<wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="OutputChannel" />
+			</bean>
+		</wlevs:listener>
+	</wlevs:channel>
+
+
+	<wlevs:channel id="PositionChannel1" event-type="PositionEvent">
+		<wlevs:listener ref="PositionProcessor1" />
+		<!-- 
+		<wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="P1" />
+			</bean>
+		</wlevs:listener>
+		 -->
+	</wlevs:channel>
+	<wlevs:channel id="PositionChannel2" event-type="PositionEvent">
+		<wlevs:listener ref="PositionProcessor2" />
+		 <!-- 
+		<wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="P2" />
+			</bean>
+		</wlevs:listener>
+		 -->
+	</wlevs:channel>
+	<wlevs:channel id="PositionChannel3" event-type="PositionEvent">
+		<wlevs:listener ref="PositionProcessor3" />
+		<!-- 
+		<wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="P3" />
+			</bean>
+		</wlevs:listener>
+		 -->
+	</wlevs:channel>
+
+	<wlevs:channel event-type="BusinessData" id="BusinessesChannel"
+		is-relation="true">
+			<wlevs:instance-property name="partitionByEventProperty"
+			value="industryID" />
+		<wlevs:listener ref="BusinessRelation1" /> 
+		<wlevs:listener ref="BusinessRelation2" />
+		<wlevs:listener ref="BusinessRelation3" />
+	</wlevs:channel>
+
+	<wlevs:channel id="BusinessRelation1" event-type="BusinessData"	is-relation="true">
+		<wlevs:listener ref="PositionProcessor1" />
+		<!-- 
+		<wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="B1" />
+			</bean>
+		</wlevs:listener>
+		 -->
+	</wlevs:channel>
+	<wlevs:channel id="BusinessRelation2" event-type="BusinessData"
+		is-relation="true">
+		<wlevs:listener ref="PositionProcessor2" />
+		<!-- 
+		<wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="B2" />
+			</bean>
+		</wlevs:listener>
+		 -->
+	</wlevs:channel>
+	<wlevs:channel id="BusinessRelation3" event-type="BusinessData"
+		is-relation="true">
+		<wlevs:listener ref="PositionProcessor3" />
+		<!-- 
+		<wlevs:listener>
+			<bean class="com.oracle.oep.listener.EventListener">
+				<property name="nodeName" value="B3" />
+			</bean>
+		</wlevs:listener>
+		 -->
+	</wlevs:channel>
+</beans>
+
+

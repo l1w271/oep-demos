@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="332" class="org.eclipse.osgi.framework.internal.core.SystemBundleActivator" hasExtensibleAPI="true" localization="systembundle" name="%systemBundle" provider="%eclipse.org"/>
+	<bundle bundleID="35" name="com.bea.core.datasource.ce" provider="Oracle"/>
+	<bundle bundleID="333" name="com.bea.wlevs.visualizer.help"/>
+	<bundle bundleID="36" name="javax.xml.bind" provider="BEA Systems"/>
+	<bundle bundleID="330" name="com.bea.wlevs.monitor.api"/>
+	<bundle bundleID="33" name="com.bea.core.weblogic.web.api" provider="BEA Systems"/>
+	<bundle bundleID="159" name="com.bea.ddtek.wlsqlserver" provider="Oracle">
+		<library name="."/>
+		<library name="lib/wlsqlserver.jar"/>
+	</bundle>
+	<bundle bundleID="331" name="com.oracle.cep.cluster.ha.adapter"/>
+	<bundle bundleID="34" name="Spring AOP" provider="SpringSource"/>
+	<bundle bundleID="158" name="com.bea.core.common.security.xacmlproviders.utils" provider="Oracle Corporation"/>
+	<bundle bundleID="39" name="com.bea.core.stax2" provider="BEA Systems"/>
+	<bundle bundleID="157" name="com.bea.core.cache" provider="BEA Systems"/>
+	<bundle bundleID="156" name="com.bea.core.common.security.provider.tuxedoLdapAuthenticators" provider="Oracle Corporation"/>
+	<bundle bundleID="334" name="OCEP Generic Processor"/>
+	<bundle bundleID="37" name="com.bea.cie.patch-common" provider="BEA Systems, Inc."/>
+	<bundle bundleID="155" name="com.bea.core.common.security.provider.defaultAdjudicator" provider="Oracle Corporation"/>
+	<bundle bundleID="335" localization="bundle" name="%project.name%" provider="%project.vendor">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="38" name="com.bea.core.diagnostics.logging" provider="BEA Systems"/>
+	<bundle bundleID="154" name="com.bea.core.common.security.provider.saml2CredentialMapper" provider="Oracle Corporation"/>
+	<bundle bundleID="152" name="com.bea.core.apache.log4j.ce" provider="Oracle"/>
+	<bundle bundleID="153" name="javax.xml.soap" provider="BEA Systems"/>
+	<bundle bundleID="150" name="com.bea.core.common.security.utils" provider="Oracle Corporation"/>
+	<bundle bundleID="151" name="com.bea.core.common.security.provider.ldapX509IdentityAsserter" provider="Oracle Corporation"/>
+	<bundle bundleID="43" name="com.bea.core.xml.xmlbeans" provider="BEA Systems"/>
+	<bundle bundleID="42" name="com.bea.core.distributor" provider="Oracle"/>
+	<bundle bundleID="41" name="com.rsa.certj" provider="BEA Systems, Inc."/>
+	<bundle bundleID="40" name="Spring Web Servlet" provider="SpringSource"/>
+	<bundle bundleID="202" name="com.bea.core.jmspool" provider="BEA Systems"/>
+	<bundle bundleID="203" name="com.bea.core.xml.stax" provider="BEA Systems"/>
+	<bundle bundleID="204" class="com.bea.core.sds.internal.Activator" name="com.bea.core.configuration.sds" provider="Oracle"/>
+	<bundle bundleID="205" name="com.bea.core.common.security.saml2.manage" provider="Oracle Corporation"/>
+	<bundle bundleID="200" name="javax.transaction" provider="BEA Systems"/>
+	<bundle bundleID="201" class="com.bea.core.configuration.manager.internal.CMActivator" name="com.bea.core.configuration.manager" provider="BEA Systems"/>
+	<bundle bundleID="22" localization="plugin" name="%osgiServices" provider="%eclipse.org"/>
+	<bundle bundleID="23" name="com.bea.core.jetty" provider="BEA Systems"/>
+	<bundle bundleID="169" name="javax.xml.ws" provider="BEA Systems"/>
+	<bundle bundleID="24" name="com.bea.core.jndi.context" provider="BEA Systems"/>
+	<bundle bundleID="25" name="com.bea.core.weblogic.commons.logging" provider="BEA Systems"/>
+	<bundle bundleID="206" name="com.bea.core.apache.commons.pool" provider="BEA Systems"/>
+	<bundle bundleID="26" name="com.bea.core.xml.staxb.runtime" provider="BEA Systems"/>
+	<bundle bundleID="166" name="com.oracle.ws.orawsdl" provider="BEA Systems"/>
+	<bundle bundleID="207" name="com.bea.cie.lconfig" provider="BEA Systems"/>
+	<bundle bundleID="27" name="com.bea.core.weblogic.transaction.wls_client" provider="Oracle"/>
+	<bundle bundleID="165" name="com.bea.core.common.security.opensaml" provider="Oracle Corporation"/>
+	<bundle bundleID="208" name="com.bea.core.common.security.provider.pkiCredentialMapper" provider="Oracle Corporation"/>
+	<bundle bundleID="28" class="com.bea.core.jndi.factorymanager.internal.Activator" name="com.bea.core.jndi.factorymanager" provider="BEA Systems"/>
+	<bundle bundleID="168" name="com.bea.core.common.security.provider.certificateRegistry" provider="Oracle Corporation"/>
+	<bundle bundleID="209" name="glassfish.xmlstreambuffer" provider="BEA Systems"/>
+	<bundle bundleID="29" name="com.bea.cie.lconfig-impl" provider="BEA Systems"/>
+	<bundle bundleID="167" name="com.bea.core.descriptor" provider="BEA Systems"/>
+	<bundle bundleID="3" name="com.bea.core.common.security.wlsdsig" provider="BEA Systems, Inc."/>
+	<bundle bundleID="161" class="com.ctc.wstx.osgi.WstxBundleActivator" name="com.bea.core.woodstox" provider="BEA Systems"/>
+	<bundle bundleID="2" name="com.bea.cie.xmldh" provider="BEA Systems"/>
+	<bundle bundleID="162" name="com.bea.core.datasource6" provider="BEA Systems"/>
+	<bundle bundleID="1" class="org.eclipse.osgi.framework.internal.core.SystemBundleActivator" hasExtensibleAPI="true" localization="systembundle" name="%systemBundle" provider="%eclipse.org"/>
+	<bundle bundleID="163" name="com.bea.core.weblogic.rmi.client" provider="BEA Systems"/>
+	<bundle bundleID="164" name="com.bea.cie.gpr-xbean" provider="BEA Systems"/>
+	<bundle bundleID="7" name="com.bea.core.timers.ce" provider="Oracle"/>
+	<bundle bundleID="30" name="Spring Web" provider="SpringSource"/>
+	<bundle bundleID="6" name="com.bea.core.common.security.opensaml2" provider="Oracle Corporation"/>
+	<bundle bundleID="5" name="com.bea.core.common.security.samlService" provider="Oracle Corporation"/>
+	<bundle bundleID="32" name="com.bea.core.common.security.authorizationService" provider="Oracle Corporation"/>
+	<bundle bundleID="4" name="com.bea.cie.wizard" provider="BEA Systems"/>
+	<bundle bundleID="31" name="com.bea.core.common.security.provider.samlCredentialMapper" provider="Oracle Corporation"/>
+	<bundle bundleID="160" name="com.bea.core.mbean.support" provider="BEA Systems"/>
+	<bundle bundleID="9" name="com.bea.core.utils" provider="BEA Systems"/>
+	<bundle bundleID="8" name="javax.ejb" provider="BEA Systems"/>
+	<bundle bundleID="211" name="com.bea.core.management.core" provider="BEA Systems"/>
+	<bundle bundleID="212" name="com.bea.core.common.security.provider.dbmsAuthenticators" provider="Oracle Corporation"/>
+	<bundle bundleID="210" name="com.bea.core.beaninfo" provider="BEA Systems"/>
+	<bundle bundleID="318" name="com.bea.wlevs.eventstore"/>
+	<bundle bundleID="215" name="Spring Context" provider="SpringSource"/>
+	<bundle bundleID="319" name="cglib-nodep.osgi" provider="Spring Framework"/>
+	<bundle bundleID="216" name="javax.xml.stream" provider="BEA Systems"/>
+	<bundle bundleID="316" name="com.bea.wlevs.diagnostic.api"/>
+	<bundle bundleID="213" name="com.bea.core.rmi" provider="BEA Systems"/>
+	<bundle bundleID="19" name="com.bea.core.common.security.provider.passwordCredentialMappers" provider="Oracle Corporation"/>
+	<bundle bundleID="317" name="com.bea.wlevs.cluster.configuration"/>
+	<bundle bundleID="214" name="com.bea.cie.paf" provider="BEA Systems"/>
+	<bundle bundleID="314" name="com.bea.wlevs.diagnostic.impl"/>
+	<bundle bundleID="219" name="com.bea.core.common.security.provider.ldapAuthenticators" provider="Oracle Corporation"/>
+	<bundle bundleID="17" name="javax.resource" provider="BEA Systems"/>
+	<bundle bundleID="179" name="com.bea.core.common.security.credentialMappingService" provider="Oracle Corporation"/>
+	<bundle bundleID="315" name="com.bea.wlevs.management.spi"/>
+	<bundle bundleID="18" name="com.bea.core.common.security.authenticationService" provider="Oracle Corporation"/>
+	<bundle bundleID="178" name="com.bea.core.repackaged.asm.commons" provider="BEA Systems"/>
+	<bundle bundleID="312" name="com.oracle.cep.server" provider="Oracle Corp.">
+		<library name="."/>
+		<library name="lib/bcel.jar"/>
+		<library name="lib/colt-1.2.0.jar"/>
+		<library name="lib/commons-csv-20070730.jar"/>
+		<library name="lib/je-3.3.69.jar"/>
+		<library name="lib/xmlparserv2.jar"/>
+		<library name="lib/xquery.jar"/>
+	</bundle>
+	<bundle bundleID="217" name="javax.xml.rpc" provider="BEA Systems"/>
+	<bundle bundleID="15" name="com.bea.core.i18n" provider="BEA Systems"/>
+	<bundle bundleID="177" name="com.bea.core.common.security.op" provider="Oracle Corporation"/>
+	<bundle bundleID="313" name="com.bea.wlevs.eplshell" provider="BEA Systems, Inc."/>
+	<bundle bundleID="218" name="com.bea.cie.ocm" provider="BEA Systems"/>
+	<bundle bundleID="16" class="com.bea.core.security.services.internal.Activator" name="com.bea.core.security.services" provider="Oracle"/>
+	<bundle bundleID="176" name="javax.jdo" provider="BEA Systems"/>
+	<bundle bundleID="310" name="AspectJ Weaver"/>
+	<bundle bundleID="13" name="javax.jms" provider="BEA Systems"/>
+	<bundle bundleID="311" name="OCEP MetaType Agent"/>
+	<bundle bundleID="14" class="com.bea.core.workmanager.internal.Activator" name="com.bea.core.weblogic.workmanager.ce" provider="Oracle"/>
+	<bundle bundleID="11" name="com.bea.core.xml.beaxmlbeans" provider="BEA Systems"/>
+	<bundle bundleID="12" class="com.bea.core.security.legacy.internal.Activator" name="com.bea.core.security.legacy" provider="Oracle"/>
+	<bundle bundleID="21" class="org.eclipse.equinox.log.Activator" localization="plugin" name="%bundleName" provider="%bundleVendor"/>
+	<bundle bundleID="170" name="com.bea.core.transaction" provider="BEA Systems"/>
+	<bundle bundleID="20" name="com.bea.core.weblogic.client.wlejb" provider="Oracle Corp, Inc."/>
+	<bundle bundleID="171" class="com.bea.core.security.actuator.internal.Activator" name="com.bea.core.security.actuator" provider="Oracle"/>
+	<bundle bundleID="174" name="com.bea.core.http.pubsub-fragment" provider="Oracle"/>
+	<bundle bundleID="175" name="com.bea.cie.instinfo" provider="BEA Systems"/>
+	<bundle bundleID="173" name="javax.xml.rpc" provider="BEA Systems"/>
+	<bundle bundleID="220" name="com.bea.core.common.security.saml2.utils" provider="Oracle Corporation"/>
+	<bundle bundleID="221" class="org.springframework.osgi.extender.internal.activator.ContextLoaderListener" name="spring-osgi-extender" provider="SpringSource">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="222" name="javax.xml.soap" provider="BEA Systems"/>
+	<bundle bundleID="223" name="com.bea.cie.xmldh" provider="BEA Systems"/>
+	<bundle bundleID="327" name="com.bea.core.tools.jref" provider="BEA Systems"/>
+	<bundle bundleID="224" name="spring-osgi-annotation" provider="SpringSource">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="328" name="com.bea.wlevs.logging"/>
+	<bundle bundleID="225" name="com.bea.core.serp" provider="BEA Systems"/>
+	<bundle bundleID="329" name="com.bea.wlevs.processor.epl"/>
+	<bundle bundleID="226" name="com.bea.core.common.security.provider.xacmlProviders" provider="Oracle Corporation"/>
+	<bundle bundleID="227" name="com.oracle.ws.http_client" provider="BEA Systems"/>
+	<bundle bundleID="323" name="com.bea.wlevs.eventstore.recplay"/>
+	<bundle bundleID="228" localization="plugin" name="com.bea.core.asyncbeans" provider="BEA Systems"/>
+	<bundle bundleID="188" name="org.apache.openjpa" provider="BEA Systems"/>
+	<bundle bundleID="324" name="com.bea.wlevs.cache"/>
+	<bundle bundleID="229" name="com.bea.core.datasource" provider="BEA Systems"/>
+	<bundle bundleID="187" name="Spring ORM" provider="SpringSource"/>
+	<bundle bundleID="325" name="com.oracle.cep.cartridge.java"/>
+	<bundle bundleID="326" name="com.bea.wlevs.cluster.evs4j"/>
+	<bundle bundleID="189" class="com.bea.core.ws.axis.internal.Activator" name="com.bea.core.ws.axis" provider="BEA Systems, Inc."/>
+	<bundle bundleID="320" name="com.bea.wlevs.businessrule"/>
+	<bundle bundleID="321">
+		<library name="."/>
+		<library name="lib/guava-r09-jarjar.jar"/>
+	</bundle>
+	<bundle bundleID="322" name="com.bea.wlevs.eventstore.genericprovider">
+		<library name="."/>
+		<library name="lib/openjpa.jar"/>
+		<library name="lib/serp.jar"/>
+	</bundle>
+	<bundle bundleID="180" name="com.bea.core.utils.expressions" provider="BEA Systems"/>
+	<bundle bundleID="10" name="com.bea.core.utils.classloaders" provider="BEA Systems"/>
+	<bundle bundleID="181" name="com.bea.core.common.security.provider.cssCommonProviders" provider="Oracle Corporation"/>
+	<bundle bundleID="182" name="aopalliance.osgi" provider="Spring Framework"/>
+	<bundle bundleID="183" name="com.bea.core.store.admintool" provider="BEA Systems"/>
+	<bundle bundleID="184" name="com.bea.core.common.security.provider.negotiateCredentialMapper" provider="Oracle Corporation"/>
+	<bundle bundleID="185" name="Spring Beans" provider="SpringSource"/>
+	<bundle bundleID="186" name="Spring JDBC" provider="SpringSource"/>
+	<bundle bundleID="116" name="com.bea.core.common.security.auditService" provider="Oracle Corporation"/>
+	<bundle bundleID="79" name="com.bea.core.common.security.provider.wlsCertPathProviders" provider="Oracle Corporation"/>
+	<bundle bundleID="117" name="com.bea.common.configfwk" provider="BEA Systems"/>
+	<bundle bundleID="78" name="com.bea.core.common.security.saml2" provider="Oracle Corporation"/>
+	<bundle bundleID="114" name="com.bea.core.sslfornetio" provider="BEA Systems"/>
+	<bundle bundleID="77" name="com.bea.core.store.jdbc" provider="BEA Systems"/>
+	<bundle bundleID="115" name="com.bea.core.store.gxa" provider="BEA Systems"/>
+	<bundle bundleID="112" name="com.bea.core.common.security.provider.negotiateIdentityAsserter" provider="Oracle Corporation"/>
+	<bundle bundleID="113" name="com.bea.cie.patch-client" provider="BEA Systems, Inc."/>
+	<bundle bundleID="110" name="com.bea.core.transaction.ce" provider="Oracle"/>
+	<bundle bundleID="111" name="com.bea.core.diagnostics.query" provider="BEA Systems"/>
+	<bundle bundleID="118" class="com.bea.core.framework.control.internal.Activator" name="com.bea.core.fc" provider="Oracle"/>
+	<bundle bundleID="119" class="com.bea.j2ee.jaf.osgi.JAFBundleActivator" name="javax.activation" provider="BEA Systems">
+		<library name="."/>
+		<library name="lib/osgi-bundle-activator.jar"/>
+	</bundle>
+	<bundle bundleID="82" name="com.bea.core.configuration.scp-jmx-frag" provider="Oracle"/>
+	<bundle bundleID="83" name="com.bea.core.apache.log4j" provider="BEA Systems"/>
+	<bundle bundleID="80" name="com.bea.core.apache.commons.logging" provider="BEA Systems"/>
+	<bundle bundleID="81" name="com.bea.core.common.security.storeService" provider="Oracle Corporation"/>
+	<bundle bundleID="86" name="com.bea.core.beanshell" provider="BEA Systems"/>
+	<bundle bundleID="87" name="com.bea.core.ox" provider="Oracle"/>
+	<bundle bundleID="84" name="com.bea.core.common.security.saml.utils" provider="Oracle Corporation"/>
+	<bundle bundleID="85" class="com.bea.httppubsub.internal.Activator" name="com.bea.core.http.pubsub" provider="BEA Systems"/>
+	<bundle bundleID="67" name="com.bea.core.store.ce" provider="Oracle"/>
+	<bundle bundleID="125" name="com.bea.oracle.ojdbc6" provider="BEA Systems"/>
+	<bundle bundleID="66" name="com.bea.core.apache.commons.collections" provider="BEA Systems"/>
+	<bundle bundleID="126" name="com.bea.core.security.legacy.css.f2" provider="Oracle"/>
+	<bundle bundleID="300" name="com.bea.wlevs.eventinspector">
+		<library name="."/>
+		<library name="lib/gson.jar"/>
+		<library name="lib/commons-httpclient.jar"/>
+		<library name="lib/commons-codec.jar"/>
+	</bundle>
+	<bundle bundleID="69" name="javax.servlet" provider="BEA Systems"/>
+	<bundle bundleID="127" name="com.bea.core.weblogic.stax" provider="BEA Systems"/>
+	<bundle bundleID="68" class="com.bea.core.deployer.server.Server" name="com.bea.core.deployer.server" provider="BEA Systems"/>
+	<bundle bundleID="128" name="com.bea.cie.gpr-impl" provider="BEA Systems"/>
+	<bundle bundleID="302" name="com.bea.wlevs.dataaggregation"/>
+	<bundle bundleID="121" name="com.bea.core.common.engine.impl" provider="Oracle Corporation"/>
+	<bundle bundleID="301" class="org.eclipse.persistence.javax.persistence.osgi.Activator" name="Java Persistence API 2.0" provider="Eclipse.org - EclipseLink Project">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="122" class="com.bea.core.jmx.server.ServerActivator" name="com.bea.core.jmx.server" provider="BEA Systems"/>
+	<bundle bundleID="304" name="com.bea.wlevs.channel"/>
+	<bundle bundleID="123" name="backport-util-concurrent" provider="Spring Framework"/>
+	<bundle bundleID="303" class="org.apache.felix.gogo.command.Activator" name="Apache Felix Gogo Command" provider="The Apache Software Foundation"/>
+	<bundle bundleID="124" name="com.bea.core.security.legacy.actuator" provider="Oracle"/>
+	<bundle bundleID="306" name="EclipseLink ASM" provider="Eclipse.org - EclipseLink Project"/>
+	<bundle bundleID="305" name="com.bea.wlevs.configuration"/>
+	<bundle bundleID="308" name="com.bea.wlevs.cep"/>
+	<bundle bundleID="307" name="com.oracle.cep.cluster.hagroups"/>
+	<bundle bundleID="129" name="com.bea.core.annogen" provider="BEA Systems"/>
+	<bundle bundleID="309" name="com.bea.wlevs.perfstats"/>
+	<bundle bundleID="70" name="com.bea.core.utils.wrapper" provider="BEA Systems"/>
+	<bundle bundleID="71" name="spring-osgi-io" provider="SpringSource">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="120" name="com.bea.core.apache.commons.lang" provider="BEA Systems"/>
+	<bundle bundleID="72" name="com.bea.core.common.security.providers.env" provider="Oracle Corporation"/>
+	<bundle bundleID="73" class="com.bea.core.ws.glassfish.jaxws.internal.JAXWSActivator" name="com.bea.core.ws.glassfish.jaxws" provider="Oracle"/>
+	<bundle bundleID="74" name="com.bea.core.netio" provider="BEA Systems"/>
+	<bundle bundleID="75" name="spring-osgi-core" provider="SpringSource">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="76" name="com.bea.core.osgimbean" provider="Oracle"/>
+	<bundle bundleID="134" name="javax.persistence" provider="BEA Systems"/>
+	<bundle bundleID="135" name="com.bea.core.weblogic.workmanager" provider="BEA Systems"/>
+	<bundle bundleID="132" name="javax.mail" provider="BEA Systems"/>
+	<bundle bundleID="59" localization="plugin" name="Ldapjdk Plug-in"/>
+	<bundle bundleID="133" class="com.bea.core.tools.secgen.Activator" name="com.bea.core.tools.secgen" provider="BEA Systems"/>
+	<bundle bundleID="58" name="com.bea.core.antlr.runtime" provider="BEA Systems"/>
+	<bundle bundleID="138" name="com.bea.core.workarea" provider="BEA Systems"/>
+	<bundle bundleID="57" name="com.bea.core.common.security.certificateService" provider="Oracle Corporation"/>
+	<bundle bundleID="139" name="com.bea.core.servicehelper" provider="BEA Systems"/>
+	<bundle bundleID="56" class="com.bea.core.security.nop.internal.Activator" name="com.bea.core.security.nop" provider="Oracle"/>
+	<bundle bundleID="136" name="com.bea.cie.oui" provider="BEA Systems"/>
+	<bundle bundleID="55" name="com.bea.cie.comdev" provider="BEA Systems"/>
+	<bundle bundleID="137" name="com.bea.oracle.ojdbc5" provider="BEA Systems"/>
+	<bundle bundleID="64" name="com.bea.core.weblogic.client.wlst3client" provider="Oracle"/>
+	<bundle bundleID="65" class="com.bea.core.configuration.simpleprovider.internal.ConfigurationProviderActivator" name="com.bea.core.configuration.simpleprovider" provider="Oracle"/>
+	<bundle bundleID="62" name="javax.annotation" provider="BEA Systems"/>
+	<bundle bundleID="63" name="com.bea.core.management.model" provider="BEA Systems"/>
+	<bundle bundleID="60" name="com.bea.core.common.security.provider.fileAuthenticator" provider="Oracle Corporation"/>
+	<bundle bundleID="131" class="com.bea.core.httpclient.internal.Activator" localization="plugin" name="Httpclient Plug-in" provider="BEA Systems">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="61" name="com.bea.core.weblogic.security" provider="Oracle Corporation"/>
+	<bundle bundleID="130" name="com.bea.cie.wlw-plaf" provider="BEA Systems"/>
+	<bundle bundleID="49" name="com.bea.core.common.security.provider.systemPasswordValidatorProvider" provider="Oracle Corporation"/>
+	<bundle bundleID="143" name="com.bea.cie.bids" provider="BEA Systems"/>
+	<bundle bundleID="48" name="javax.jws" provider="BEA Systems"/>
+	<bundle bundleID="144" name="com.bea.core.weblogic.client.jmx" provider="BEA Systems, Inc."/>
+	<bundle bundleID="145" name="com.bea.core.kodo" provider="BEA Systems"/>
+	<bundle bundleID="146" name="com.bea.core.store" provider="BEA Systems"/>
+	<bundle bundleID="45" name="com.bea.core.common.security.provider.samlAuthenticator" provider="Oracle Corporation"/>
+	<bundle bundleID="147" name="com.bea.core.security.legacy.css.f1" provider="Oracle"/>
+	<bundle bundleID="44" name="com.bea.core.common.security.providers.utils" provider="Oracle Corporation"/>
+	<bundle bundleID="148" name="com.bea.core.common.security.provider.samlIdentityAsserter" provider="Oracle Corporation"/>
+	<bundle bundleID="47" name="com.bea.core.common.security.api" provider="Oracle Corporation"/>
+	<bundle bundleID="149" name="com.bea.core.repackaged.asm" provider="BEA Systems"/>
+	<bundle bundleID="46" name="com.bea.cie.clone" provider="BEA Systems, Inc."/>
+	<bundle bundleID="51" name="com.bea.core.servicefinderservices" provider="BEA Systems"/>
+	<bundle bundleID="52" name="com.bea.core.jasper" provider="BEA Systems"/>
+	<bundle bundleID="53" class="com.bea.core.security.saml2.Activator" name="com.bea.core.security.saml2" provider="Oracle">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="54" class="com.bea.backplane.bundlemanager.internal.Activator" name="com.bea.backplane.bundlemanager" provider="Oracle"/>
+	<bundle bundleID="140" name="com.bea.core.common.security.provider.saml2IdentityAsserter" provider="Oracle Corporation"/>
+	<bundle bundleID="142" name="com.bea.core.common.security.tools" provider="Oracle Corporation"/>
+	<bundle bundleID="50" name="javax.activation" provider="BEA Systems"/>
+	<bundle bundleID="141" name="javax.xml.stream" provider="BEA Systems"/>
+	<bundle bundleID="281" name="com.oracle.cep.cartridge.java.loader"/>
+	<bundle bundleID="280" name="com.bea.wlevs.management"/>
+	<bundle bundleID="285" name="com.bea.wlevs.security"/>
+	<bundle bundleID="284" class="org.apache.felix.gogo.runtime.activator.Activator" name="Apache Felix Gogo Runtime" provider="The Apache Software Foundation"/>
+	<bundle bundleID="283" name="com.bea.wlevs.deployment"/>
+	<bundle bundleID="282" name="com.bea.wlevs.dataservices"/>
+	<bundle bundleID="288" name="com.oracle.cep.cartridge.spatial"/>
+	<bundle bundleID="289" name="com.bea.wlevs.ede.api"/>
+	<bundle bundleID="286" name="com.bea.wlevs.util"/>
+	<bundle bundleID="287" name="com.bea.wlevs.spring.extender"/>
+	<bundle bundleID="270"/>
+	<bundle bundleID="272" name="Cartridge for Oracle NoSql Database (KV server)"/>
+	<bundle bundleID="271" name="EclipseLink JPA" provider="Eclipse.org - EclipseLink Project"/>
+	<bundle bundleID="274" name="com.caucho.hessian"/>
+	<bundle bundleID="273" name="EclipseLink Oracle Extensions" provider="Eclipse.org - EclipseLink Project"/>
+	<bundle bundleID="275"/>
+	<bundle bundleID="276" name="com.bea.wlevs.cluster.api.gcp"/>
+	<bundle bundleID="277" name="com.oracle.cep.logging" provider="Oracle Corp.">
+		<library name="."/>
+		<library name="lib/ojdl.jar"/>
+	</bundle>
+	<bundle bundleID="278" name="com.oracle.cep.deployment.shared"/>
+	<bundle bundleID="279" name="com.bea.wlevs.adapters.httppubsub">
+		<library name="."/>
+		<library name="lib/commons-httpclient.jar"/>
+		<library name="lib/commons-codec.jar"/>
+	</bundle>
+	<bundle bundleID="109" class="com.bea.core.security.identity.internal.Activator" name="com.bea.core.bootbundle" provider="Oracle"/>
+	<bundle bundleID="108" name="com.bea.cie.gpr" provider="BEA Systems"/>
+	<bundle bundleID="107" name="com.bea.core.repackaged.asm" provider="BEA Systems"/>
+	<bundle bundleID="106" name="Spring JMS" provider="SpringSource"/>
+	<bundle bundleID="105" name="glassfish.jaxb" provider="BEA Systems"/>
+	<bundle bundleID="104" name="com.bea.cie.bsu" provider="BEA Systems"/>
+	<bundle bundleID="103" name="com.bea.core.diagnostics.core" provider="BEA Systems"/>
+	<bundle bundleID="99" name="com.bea.core.resourcepool" provider="BEA Systems"/>
+	<bundle bundleID="102" name="com.bea.core.cache-frag" provider="BEA Systems"/>
+	<bundle bundleID="101" name="com.bea.core.apache.log4j" provider="BEA Systems"/>
+	<bundle bundleID="100" name="com.bea.core.timers" provider="BEA Systems"/>
+	<bundle bundleID="98" name="com.bea.core.messaging.kernel" provider="BEA Systems"/>
+	<bundle bundleID="97" name="com.bea.core.common.security.store.upgradetool" provider="Oracle Corporation"/>
+	<bundle bundleID="96" name="javax.mail" provider="BEA Systems"/>
+	<bundle bundleID="95" name="Spring Core" provider="SpringSource"/>
+	<bundle bundleID="94" name="glassfish.stax.ex" provider="BEA Systems"/>
+	<bundle bundleID="93" name="com.bea.core.sslConfig" provider="BEA Systems"/>
+	<bundle bundleID="92" name="javax.jsp" provider="BEA Systems"/>
+	<bundle bundleID="91" name="com.bea.core.common.engine.api" provider="Oracle Corporation"/>
+	<bundle bundleID="294" name="com.oracle.cep.libext"/>
+	<bundle bundleID="90" name="com.bea.core.apache.commons.logging.api" provider="BEA Systems"/>
+	<bundle bundleID="293" name="com.oracle.cep.metadata"/>
+	<bundle bundleID="296" name="com.bea.wlevs.visualizer.jmxhttpadapter"/>
+	<bundle bundleID="295" class="org.apache.derby.osgi.EmbeddedActivator" name="Apache Derby 10.3" provider="Apache Software Foundation"/>
+	<bundle bundleID="290" name="com.bea.wlevs.monitor.spi"/>
+	<bundle bundleID="292" name="Commons BeanUtils" provider="The Apache Software Foundation"/>
+	<bundle bundleID="291" name="com.bea.wlevs.spi"/>
+	<bundle bundleID="297" name="com.bea.wlevs.monitor"/>
+	<bundle bundleID="298"/>
+	<bundle bundleID="299" name="EclipseLink ANTLR" provider="Eclipse.org - EclipseLink Project"/>
+	<bundle bundleID="88" name="com.bea.core.jsafe" provider="BEA Systems"/>
+	<bundle bundleID="89" class="com.bea.core.osgilogreaderadapter.internal.OSGiLogReaderAdapter" name="com.bea.core.osgilogreaderadapter" provider="BEA Systems"/>
+	<bundle bundleID="240" name="com.tangosol.coherence"/>
+	<bundle bundleID="241" name="com.oracle.cep.shell"/>
+	<bundle bundleID="195" name="com.bea.core.repackaged.asm.tree" provider="BEA Systems"/>
+	<bundle bundleID="194" name="com.bea.core.logging" provider="BEA Systems"/>
+	<bundle bundleID="197" name="com.bea.core.common.security.config.op" provider="Oracle Corporation"/>
+	<bundle bundleID="196" name="com.bea.cie.uninstall" provider="BEA Systems"/>
+	<bundle bundleID="191" name="com.bea.core.webextensions" provider="BEA Systems"/>
+	<bundle bundleID="190" name="Spring Transaction" provider="SpringSource"/>
+	<bundle bundleID="193" name="com.bea.core.common.security.jdkutils" provider="Oracle Corporation"/>
+	<bundle bundleID="192" name="com.bea.core.common.security.csserviceimpl" provider="Oracle Corporation"/>
+	<bundle bundleID="198" name="com.bea.cie.comdev" provider="BEA Systems"/>
+	<bundle bundleID="199" name="com.bea.core.store.jdbc.ce" provider="Oracle"/>
+	<bundle bundleID="245"/>
+	<bundle bundleID="244" hasExtensibleAPI="true" name="EclipseLink Core" provider="Eclipse.org - EclipseLink Project">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="243" name="com.bea.wlevs.spring.support"/>
+	<bundle bundleID="242" class="org.apache.felix.gogo.shell.Activator" name="Apache Felix Gogo Shell" provider="The Apache Software Foundation"/>
+	<bundle bundleID="249" class="org.eclipse.persistence.jpa.osgi.Activator" name="EclipseLink OSGi Integration (deprecatated, non Gemini)" provider="Eclipse.org - EclipseLink Project"/>
+	<bundle bundleID="248" name="com.bea.wlevs.eventstore.bdbprovider"/>
+	<bundle bundleID="247" name="com.bea.wlevs.management.api"/>
+	<bundle bundleID="246" name="com.bea.wlevs.security.impl.nop"/>
+	<bundle bundleID="230" name="Spring Context Support" provider="SpringSource"/>
+	<bundle bundleID="239" class="org.apache.felix.metatype.internal.Activator" name="Apache Felix Metatype Service" provider="The Apache Software Foundation">
+		<library name="."/>
+		<library name="kxml2-2.2.2.jar"/>
+	</bundle>
+	<bundle bundleID="232" name="com.bea.core.weblogic.client.wlst3client.jtagateway" provider="Oracle"/>
+	<bundle bundleID="231" class="com.bea.core.servicefinderhelper.internal.Activator" name="com.bea.core.servicefinderhelper" provider="BEA Systems"/>
+	<bundle bundleID="234" name="com.bea.core.common.security.i18n" provider="Oracle Corporation"/>
+	<bundle bundleID="233" name="com.bea.core.common.security.xacml" provider="Oracle Corporation"/>
+	<bundle bundleID="236" name="com.bea.core.weblogic.client" provider="Oracle"/>
+	<bundle bundleID="235" name="com.bea.core.xml.xmlbeans" provider="BEA Systems"/>
+	<bundle bundleID="238" name="com.oracle.cep.cartridge.jdbc">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="237" class="com.oracle.cep.lifecycle.BundleLifecycleActivator" name="com.bea.wlevs.lifecycle.bundle"/>
+	<bundle bundleID="262" name="com.bea.wlevs.spring"/>
+	<bundle bundleID="263" name="com.oracle.cep.cartridge.infra"/>
+	<bundle bundleID="260" name="com.bea.wlevs.ede"/>
+	<bundle bundleID="261">
+		<library name="."/>
+		<library name="WEB-INF/classes"/>
+		<library name="WEB-INF/lib/aolj.jar"/>
+		<library name="WEB-INF/lib/batik-1.7.jar"/>
+		<library name="WEB-INF/lib/classgen.jar"/>
+		<library name="WEB-INF/lib/commons-collections-3.2.jar"/>
+		<library name="WEB-INF/lib/commons-lang-2.3.jar"/>
+		<library name="WEB-INF/lib/commons-logging-1.1.jar"/>
+		<library name="WEB-INF/lib/glassfish.jaxb_1.0.0.0_2-1-7.jar"/>
+		<library name="WEB-INF/lib/jai_codec.jar"/>
+		<library name="WEB-INF/lib/jai_core.jar"/>
+		<library name="WEB-INF/lib/javax.activation_1.1.0.0_1-1.jar"/>
+		<library name="WEB-INF/lib/javax.xml.bind_2.1.1.jar"/>
+		<library name="WEB-INF/lib/javax.xml.stream_1.0.0.0.jar"/>
+		<library name="WEB-INF/lib/je-3.3.75.jar"/>
+		<library name="WEB-INF/lib/jnlp-servlet.jar"/>
+		<library name="WEB-INF/lib/json.jar"/>
+		<library name="WEB-INF/lib/jstl.jar"/>
+		<library name="WEB-INF/lib/lbs.jar"/>
+		<library name="WEB-INF/lib/mapcache.jar"/>
+		<library name="WEB-INF/lib/mapviewer.jar"/>
+		<library name="WEB-INF/lib/mvclient.jar"/>
+		<library name="WEB-INF/lib/mvconsole.jar"/>
+		<library name="WEB-INF/lib/mvmbeans.jar"/>
+		<library name="WEB-INF/lib/mvproxy.jar"/>
+		<library name="WEB-INF/lib/mvutil.jar"/>
+		<library name="WEB-INF/lib/ojdbc5.jar"/>
+		<library name="WEB-INF/lib/ojdl.jar"/>
+		<library name="WEB-INF/lib/orai18n-mapping.jar"/>
+		<library name="WEB-INF/lib/ordim.jar"/>
+		<library name="WEB-INF/lib/quartz-1.6.2.jar"/>
+		<library name="WEB-INF/lib/runtime12.jar"/>
+		<library name="WEB-INF/lib/sdoapi.jar"/>
+		<library name="WEB-INF/lib/sdogr.jar"/>
+		<library name="WEB-INF/lib/sdonm.jar"/>
+		<library name="WEB-INF/lib/sdoshp.jar"/>
+		<library name="WEB-INF/lib/sdoutl.jar"/>
+		<library name="WEB-INF/lib/sdovis.jar"/>
+		<library name="WEB-INF/lib/standard.jar"/>
+		<library name="WEB-INF/lib/vecmath.jar"/>
+		<library name="WEB-INF/lib/wmsfilter.jar"/>
+		<library name="WEB-INF/lib/xdb.jar"/>
+		<library name="WEB-INF/lib/xdog2dlib.jar"/>
+		<library name="WEB-INF/lib/xmlparserv2.jar"/>
+	</bundle>
+	<bundle bundleID="269" name="com.oracle.cep.processor.cql"/>
+	<bundle bundleID="268" name="com.bea.wlevs.diagnostic.spi"/>
+	<bundle bundleID="267" class="org.apache.felix.bundlerepository.impl.Activator" name="Apache Felix Bundle Repository" provider="The Apache Software Foundation"/>
+	<bundle bundleID="266" name="com.bea.core.antlr" provider="BEA Systems"/>
+	<bundle bundleID="265" name="com.oracle.cep.cartridge.hadoop"/>
+	<bundle bundleID="264" name="com.bea.wlevs.security.impl"/>
+	<bundle bundleID="250" name="com.bea.wlevs.eventtyperepo"/>
+	<bundle bundleID="251" name="com.bea.wlevs.adapters.jms"/>
+	<bundle bundleID="252" name="com.bea.wlevs.adapter.packet"/>
+	<bundle bundleID="258" name="com.bea.core.tools.bundler" provider="BEA Systems"/>
+	<bundle bundleID="257"/>
+	<bundle bundleID="259" name="com.bea.wlevs.cluster.api"/>
+	<bundle bundleID="254" name="com.oracle.cep.faulthandler"/>
+	<bundle bundleID="253" name="com.oracle.cep.adapter.file"/>
+	<bundle bundleID="256" name="com.bea.wlevs.cluster.coherence"/>
+	<bundle bundleID="255" name="com.bea.wlevs.adapters.loadgen"/>
+</map>

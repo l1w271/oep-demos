@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application"
+              xmlns:jdbc="http://www.oracle.com/ns/ocep/config/jdbc">
+    <processor>
+        <name>PurchaseProcessor</name>
+        <rules>
+            <query id="ExampleQuery">
+            <![CDATA[ 
+            SELECT * 
+            FROM InputChannel  
+            ]]></query>
+        </rules>
+    </processor>
+</wlevs:config>
+

@@ -1,0 +1,57 @@
+Manifest-Version: 1.0
+Export-Package: com.bea.wlevs.adapters.httppubsub;uses:="org.springfra
+ mework.osgi.context,org.apache.commons.logging,weblogic.i18n.logging,
+ weblogic.logging,org.springframework.beans.factory.annotation,com.bea
+ .core.encryption,com.bea.wlevs.ede.spi,com.bea.wlevs.adapters.httppub
+ sub.api,com.bea.httppubsub,org.springframework.beans.factory,com.bea.
+ wlevs.configuration,org.springframework.util,com.bea.wlevs.configurat
+ ion.application,com.bea.httppubsub.json,com.bea.wlevs.ede.api,com.bea
+ .wlevs.adapters.httppubsub.support,com.bea.wlevs.util,com.bea.core.se
+ rvicehelper,org.osgi.framework,com.bea.wlevs.ede.api.annotation";vers
+ ion=11.1.1.7_0,com.bea.wlevs.adapters.httppubsub.api;uses:=com.bea.ht
+ tppubsub.json;version=11.1.1.7_0,com.bea.wlevs.adapters.httppubsub.su
+ pport;uses:="org.apache.commons.httpclient.auth,com.bea.wlevs.adapter
+ s.httppubsub,org.apache.commons.codec,org.apache.commons.logging,org.
+ apache.commons.codec.binary,com.bea.httppubsub.json,com.bea.wlevs.ede
+ .api,org.apache.commons.httpclient,org.apache.commons.httpclient.meth
+ ods,org.apache.commons.httpclient.params";version=11.1.1.7_0
+FLEX_SDK_LOCATION: /ade/patkrish_ps6v/cep/wlevs_cql/modules/visualizer
+ /lib
+Private-Package: bnd,lib,org.apache.commons.codec,org.apache.commons.c
+ odec.binary,org.apache.commons.codec.digest,org.apache.commons.codec.
+ language,org.apache.commons.codec.net,org.apache.commons.httpclient,o
+ rg.apache.commons.httpclient.auth,org.apache.commons.httpclient.cooki
+ e,org.apache.commons.httpclient.methods,org.apache.commons.httpclient
+ .methods.multipart,org.apache.commons.httpclient.params,org.apache.co
+ mmons.httpclient.protocol,org.apache.commons.httpclient.util,weblogic
+ .i18n
+Bundle-ClassPath: .,lib/commons-httpclient.jar,lib/commons-codec.jar
+Tool: Bnd-0.0.208
+Bundle-Name: com.bea.wlevs.adapters.httppubsub
+Created-By: 1.6.0_05 (BEA Systems, Inc.)
+SDK_ZIP_NAME: flex3.0.0_nls_sdk
+Ant-Version: Apache Ant 1.7.1
+Bundle-Version: 11.1.1.7_0
+Bnd-LastModified: 1360135547334
+Spring-Context: META-INF/spring/httppubsub.xml
+Bundle-ManifestVersion: 2
+Import-Package: com.bea.core.encryption,com.bea.core.servicehelper,com
+ .bea.httppubsub,com.bea.httppubsub.json,com.bea.wlevs.adapters.httppu
+ bsub;version=11.1.1.7_0,com.bea.wlevs.adapters.httppubsub.api;version
+ =11.1.1.7_0,com.bea.wlevs.adapters.httppubsub.support;version=11.1.1.
+ 7_0,com.bea.wlevs.configuration;version=11.1.1.7_0,com.bea.wlevs.conf
+ iguration.application;version=11.1.1.7_0,com.bea.wlevs.ede.api;versio
+ n=11.1.1.7_0,com.bea.wlevs.ede.api.annotation;version=11.1.1.7_0,com.
+ bea.wlevs.ede.spi;version=11.1.1.7_0,com.bea.wlevs.spring.support;ver
+ sion=11.1.1.7_0,com.bea.wlevs.util;version=11.1.1.7_0,net.sf.cglib.co
+ re,net.sf.cglib.proxy,net.sf.cglib.reflect,org.aopalliance.aop,org.ao
+ palliance.intercept,org.apache.commons.logging;version=1.1.0,org.spri
+ ngframework.aop;version=2.5.6,org.springframework.aop.framework;versi
+ on=2.5.6,org.springframework.beans.factory;version=2.5.6,org.springfr
+ amework.beans.factory.annotation;version=2.5.6,org.springframework.os
+ gi.context;version=1.2.0,org.springframework.util;version=2.5.6,weblo
+ gic.i18n.logging;version=1.0.0.0,weblogic.logging;version=1.0.0.0
+Bundle-SymbolicName: com.bea.wlevs.adapters.httppubsub
+Originally-Created-By: R27.6.0-50_o-100423-1.6.0_05-20080626-2104-linu
+ x-ia32 (BEA Systems, Inc.)
+

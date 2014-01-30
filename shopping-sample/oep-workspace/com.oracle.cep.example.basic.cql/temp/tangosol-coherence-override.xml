@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+
+<!--
+	This operational configuration override file is set up for use with Coherence in
+	a development mode.
+-->
+<coherence xml-override="/tangosol-coherence-override.xml">
+	<cluster-config>
+		<member-identity>
+			<cluster-name>com.oracle.cep.cql.examples</cluster-name>
+		</member-identity>
+
+		<unicast-listener>
+			<well-known-addresses>
+				<socket-address id="1">
+					<address>192.168.56.1</address>
+					<port>8089</port>
+				</socket-address>
+				<socket-address id="2">
+					<address>10.34.120.239</address>
+					<port>8090</port>
+				</socket-address>
+			</well-known-addresses>
+			<address>192.168.56.1</address>
+			<port>8089</port>
+		</unicast-listener>
+	</cluster-config>
+</coherence>

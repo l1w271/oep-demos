@@ -1,0 +1,17 @@
+e1000,sms,cust5,5,on
+e1001,sms,cust1,5,on
+e1002,sms,cust2,2,on
+e1003,sms,cust1,1,on
+e1004,voice,cust1,20,on
+e1005,data,cust1,5,on
+e1006,sms,cust1,1,on
+e1007,sms,cust1,1,on
+e1008,sms,cust2,1,on
+e1009,sms,cust3,18,on
+e1010,voice,cust1,15,off
+e1011,voice,cust1,40,on
+e1012,data,cust2,30,on
+e1013,voice,cust2,700,on
+e1014,voice,cust2,22,off
+e1015,voice,cust4,900,on
+e1016,data,cust4,100,off

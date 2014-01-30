@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wlevs:config xmlns:wlevs="http://www.bea.com/ns/wlevs/config/application"
+              xmlns:jdbc="http://www.oracle.com/ns/ocep/config/jdbc">
+    <processor>
+        <name>PositionProcessor3</name>
+        <rules>
+  
+            <view id="PositionView3">
+		        SELECT paymentID, industryID, longitude, latitude,
+		         com.oracle.cep.cartridge.spatial.Geometry.createPoint(8307, longitude, latitude) as geometry
+		        FROM PositionChannel3
+    		</view>
+    		    		
+    		    		
+		    <query id="WithinDistanceQuery3">
+        	ISTREAM(
+            	SELECT
+            	i.paymentID as paymentID,
+            	i.industryID as industryID,
+            	i.latitude as latitude, 
+            	i.longitude as longitude,
+            	b.businessID as businessID, 
+            	b.businessName as businessName,
+            	b.businessEmail as businessEmail,
+            	b.latitude as businessLatitude, 
+            	b.longitude as businessLongitude, 
+            	b.industryID as businessIndustryID, 
+            	com.oracle.cep.cartridge.spatial.Geometry.distance@spatial(b.geometry, i.geometry) as distance          
+            	FROM BusinessRelation3 as b, PositionView3 [NOW] as i
+                WHERE WITHINDISTANCE@spatial(b.geometry, i.geometry, 200000.0d) = true
+                AND b.industryID = i.industryID
+               
+        	)
+    		</query>
+                 
+        </rules>
+    </processor>
+    
+</wlevs:config>

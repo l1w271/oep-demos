@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="335" localization="bundle" name="%project.name%" project="SpatialTest" provider="%project.vendor">
+		<library name="."/>
+	</bundle>
+</map>
